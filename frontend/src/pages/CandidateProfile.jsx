@@ -13,12 +13,26 @@ const CandidateProfile = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // State for tabs and the feedback popup
+    // States
     const [activeTab, setActiveTab] = useState('skills');
     const [selectedFeedback, setSelectedFeedback] = useState(null);
 
-    // Helper function to close the modal
+    // State to track the current video URL for each round (UPDATED WITH NEW LINK)
+    const [videoUrls, setVideoUrls] = useState({
+        1: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+        2: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+        3: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG"
+    });
+
     const closeModal = () => setSelectedFeedback(null);
+
+    // Function to jump video to a specific time (UPDATED WITH NEW LINK ID)
+    const jumpToTime = (round, seconds) => {
+        setVideoUrls(prev => ({
+            ...prev,
+            [round]: `https://www.youtube.com/embed/mQ8HlG3Tse4?start=${seconds}&autoplay=1`
+        }));
+    };
 
     return (
         <div className="container" style={{ position: 'relative' }}>
@@ -68,14 +82,6 @@ const CandidateProfile = () => {
                     style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--primary-blue)', fontWeight: '500', cursor: 'pointer' }}
                 >
                     <FaArrowLeft /> Back to Candidates
-                </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                    <button className="quick-action-btn" style={{ background: 'white' }}><FaClipboardCheck /> Shortlist</button>
-                    <button className="quick-action-btn" style={{ background: 'white' }}><FaShareAlt /> Share</button>
-                    <button className="quick-action-btn" style={{ background: 'var(--primary-blue)', color: 'white', border: 'none' }}>
-                        <FaCalendarAlt /> Schedule Interview
-                    </button>
-                    <button className="quick-action-btn" style={{ background: 'white', padding: '10px' }}><FaChevronDown /></button>
                 </div>
             </div>
 
@@ -139,7 +145,7 @@ const CandidateProfile = () => {
             {/* 5. MAIN GRID CONTENT */}
             <div className="profile-content">
 
-                {/* ================= TAB 1: SKILLS & DEPTH (UNCHANGED) ================= */}
+                {/* ================= TAB 1: SKILLS & DEPTH ================= */}
                 {activeTab === 'skills' && (
                     <>
                         <div className="section">
@@ -261,7 +267,7 @@ const CandidateProfile = () => {
                     </>
                 )}
 
-                {/* ================= TAB 2: INTERVIEWS & AI SUMMARY (UPDATED LAYOUT) ================= */}
+                {/* ================= TAB 2: INTERVIEWS & AI SUMMARY ================= */}
                 {activeTab === 'interviews' && (
                     <>
                         <div className="timeline">
@@ -269,17 +275,16 @@ const CandidateProfile = () => {
                                 <FaVideo size={24} color="var(--primary-blue)" /> INTERVIEW TIMELINE & AI SUMMARIES
                             </div>
 
-                            {/* INTERVIEW 1 (2-Column Layout) */}
+                            {/* INTERVIEW 1 */}
                             <div className="interview-card" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'stretch' }}>
-
-                                {/* Left Section: Video */}
                                 <div style={{ flex: '1 1 300px', maxWidth: '400px' }}>
                                     <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', backgroundColor: '#000' }}>
                                         <iframe
-                                            src="https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG"
+                                            src={videoUrls[1]}
                                             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                                             allowFullScreen
-                                            title="Round 1 Interview"
+                                            allow="autoplay; encrypted-media"
+                                            title="Technical Interview 1"
                                         ></iframe>
                                     </div>
                                     <div style={{ textAlign: 'center', marginTop: '10px', color: 'var(--text-muted)', fontSize: '12px', fontWeight: '600' }}>
@@ -287,25 +292,29 @@ const CandidateProfile = () => {
                                     </div>
                                 </div>
 
-                                {/* Right Section: Details */}
                                 <div style={{ flex: '2 1 400px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                                     <div>
                                         <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                            📅 Mar 15, 2024 • Round 1: Technical Screening
+                                            📅 Mar 15, 2024 • Technical Interview 1
                                         </h3>
                                         <div style={{ color: '#475569', fontSize: '14px', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                             <FaBullseye color="var(--primary-blue)" /> Focus: React fundamentals, JavaScript concepts
                                         </div>
 
-                                        {/* Moment Tags */}
+                                        {/* Moment Tags (Click to Play) - Times converted to total seconds */}
                                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '16px' }}>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [02:15] "Virtual DOM is a lightweight..."</span>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [12:30] Custom hook for API caching</span>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [28:45] Struggled with useCallback</span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(1, 135)}> {/* 2 mins 15 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [02:15] "Virtual DOM is a lightweight..."
+                                            </span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(1, 750)}> {/* 12 mins 30 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [12:30] Custom hook for API caching
+                                            </span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(1, 1725)}> {/* 28 mins 45 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [28:45] Struggled with useCallback
+                                            </span>
                                         </div>
                                     </div>
 
-                                    {/* Bottom Action Row */}
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--border-light)' }}>
                                         <span style={{ padding: '6px 16px', background: '#f1f5f9', borderRadius: '20px', fontSize: '13px', fontWeight: '600', color: 'var(--text-main)' }}>
                                             📊 Round Score: 8.2/10
@@ -320,15 +329,16 @@ const CandidateProfile = () => {
                                 </div>
                             </div>
 
-                            {/* INTERVIEW 2 (2-Column Layout) */}
+                            {/* INTERVIEW 2 */}
                             <div className="interview-card" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'stretch' }}>
                                 <div style={{ flex: '1 1 300px', maxWidth: '400px' }}>
                                     <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', backgroundColor: '#000' }}>
                                         <iframe
-                                            src="https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG"
+                                            src={videoUrls[2]}
                                             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                                             allowFullScreen
-                                            title="Round 2 Interview"
+                                            allow="autoplay; encrypted-media"
+                                            title="Technical Interview 2"
                                         ></iframe>
                                     </div>
                                     <div style={{ textAlign: 'center', marginTop: '10px', color: 'var(--text-muted)', fontSize: '12px', fontWeight: '600' }}>Duration: 60 min</div>
@@ -337,15 +347,21 @@ const CandidateProfile = () => {
                                 <div style={{ flex: '2 1 400px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                                     <div>
                                         <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                            📅 Mar 22, 2024 • Round 2: System Design
+                                            📅 Mar 22, 2024 • Technical Interview 2
                                         </h3>
                                         <div style={{ color: '#475569', fontSize: '14px', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                             <FaBullseye color="var(--primary-blue)" /> Focus: Frontend architecture, performance optimization
                                         </div>
                                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '16px' }}>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [05:50] Component breakdown strategy</span>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [32:15] "We can use React.lazy..."</span>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [48:00] Unclear on service workers</span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(2, 350)}> {/* 5 mins 50 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [05:50] Component breakdown strategy
+                                            </span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(2, 1935)}> {/* 32 mins 15 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [32:15] "We can use React.lazy..."
+                                            </span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(2, 2880)}> {/* 48 mins 00 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [48:00] Unclear on service workers
+                                            </span>
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--border-light)' }}>
@@ -362,15 +378,16 @@ const CandidateProfile = () => {
                                 </div>
                             </div>
 
-                            {/* INTERVIEW 3 (2-Column Layout - Blue Highlight) */}
+                            {/* INTERVIEW 3 */}
                             <div className="interview-card" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'stretch', borderLeft: '4px solid var(--primary-blue)' }}>
                                 <div style={{ flex: '1 1 300px', maxWidth: '400px' }}>
                                     <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', backgroundColor: '#000' }}>
                                         <iframe
-                                            src="https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG"
+                                            src={videoUrls[3]}
                                             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                                             allowFullScreen
-                                            title="Round 3 Interview"
+                                            allow="autoplay; encrypted-media"
+                                            title="Technical Interview 3"
                                         ></iframe>
                                     </div>
                                     <div style={{ textAlign: 'center', marginTop: '10px', color: 'var(--text-muted)', fontSize: '12px', fontWeight: '600' }}>Duration: 75 min</div>
@@ -379,15 +396,21 @@ const CandidateProfile = () => {
                                 <div style={{ flex: '2 1 400px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                                     <div>
                                         <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                            📅 Mar 29, 2024 • Round 3: Live Coding
+                                            📅 Mar 29, 2024 • Technical Interview 3
                                         </h3>
                                         <div style={{ color: '#475569', fontSize: '14px', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                             <FaBullseye color="var(--primary-blue)" /> Focus: Build a search autocomplete component
                                         </div>
                                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '16px' }}>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [15:20] Debounce implementation...</span>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [42:10] "We should cache results..."</span>
-                                            <span className="moment-tag"><FaPlayCircle color="var(--primary-blue)" /> [63:00] Wrote unit tests for the component</span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(3, 920)}> {/* 15 mins 20 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [15:20] Debounce implementation...
+                                            </span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(3, 2530)}> {/* 42 mins 10 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [42:10] "We should cache results..."
+                                            </span>
+                                            <span className="moment-tag" onClick={() => jumpToTime(3, 3780)}> {/* 63 mins 00 secs */}
+                                                <FaPlayCircle color="var(--primary-blue)" /> [63:00] Wrote unit tests for the component
+                                            </span>
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--border-light)' }}>
