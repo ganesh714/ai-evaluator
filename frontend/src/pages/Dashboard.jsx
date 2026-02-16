@@ -274,7 +274,14 @@ const Dashboard = () => {
                                         </div>
                                         <div>
                                             <h4 style={{ margin: '0 0 2px 0', fontSize: '16px', color: 'var(--text-main)' }}>{candidate.name}</h4>
-                                            <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>{candidate.role} • {candidate.experience}</p>
+                                            <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>
+                                                {candidate.role} • {candidate.experience}
+                                                {candidate.education && candidate.education.length > 0 && (
+                                                    <span style={{ marginLeft: '8px', padding: '2px 6px', background: '#eef2ff', color: '#4f46e5', borderRadius: '4px', fontSize: '11px', fontWeight: 'bold' }}>
+                                                        {candidate.education[0].degree}
+                                                    </span>
+                                                )}
+                                            </p>
                                         </div>
                                     </div>
                                     <div style={{ padding: '6px 12px', background: '#dcfce7', color: '#166534', borderRadius: '20px', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>

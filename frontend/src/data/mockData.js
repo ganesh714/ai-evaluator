@@ -200,8 +200,8 @@ export const mockCandidates = [
         },
         "education": [
             {
-                "degree": "MCA",
-                "branch": "Computer Applications",
+                "degree": "M.Tech",
+                "branch": "Computer Science and Engineering",
                 "year": 2018
             }
         ]
@@ -385,8 +385,8 @@ export const mockCandidates = [
         },
         "education": [
             {
-                "degree": "BCA",
-                "branch": "Computer Applications",
+                "degree": "B.Tech",
+                "branch": "Artificial Intelligence and Machine Learning",
                 "year": 2024
             }
         ]

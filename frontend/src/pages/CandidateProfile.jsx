@@ -130,6 +130,9 @@ const CandidateProfile = () => {
                         <div style={{ display: 'flex', gap: '16px', marginTop: '8px', color: '#475569', fontSize: '14px' }}>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><FaMapMarkerAlt /> {candidate.location}</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><FaEnvelope /> {candidate.email}</span>
+                            {candidate.education && candidate.education.length > 0 && (
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><FaBook /> {candidate.education[0].degree} in {candidate.education[0].branch}</span>
+                            )}
                         </div>
                     </div>
                 </div>
