@@ -102,14 +102,14 @@ const CandidateProfile = () => {
                 >
                     <FaArrowLeft /> Back to Candidates
                 </div>
-                <div style={{ display: 'flex', gap: '12px' }}>
+                {/* <div style={{ display: 'flex', gap: '12px' }}>
                     <button className="quick-action-btn" style={{ background: 'white' }}><FaClipboardCheck /> Shortlist</button>
                     <button className="quick-action-btn" style={{ background: 'white' }}><FaShareAlt /> Share</button>
                     <button className="quick-action-btn" style={{ background: 'var(--primary-blue)', color: 'white', border: 'none' }}>
                         <FaCalendarAlt /> Schedule Interview
                     </button>
                     <button className="quick-action-btn" style={{ background: 'white', padding: '10px' }}><FaChevronDown /></button>
-                </div>
+                </div> */}
             </div>
 
             {/* 3. PROFILE HEADER */}

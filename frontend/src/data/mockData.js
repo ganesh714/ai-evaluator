@@ -1,11 +1,11 @@
 export const mockCandidates = [
     {
         id: "101",
-        name: "Sarah Chen",
+        name: "Rajendra Mallina",
         role: "Senior Frontend Developer",
-        experience: "5 yrs",
-        location: "San Francisco, CA",
-        email: "sarah.chen@email.com",
+        experience: "8 yrs",
+        location: "Hyderabad, Telangana",
+        email: "rajendram@email.com",
         aiScore: 8.7,
         trend: "+12%",
         trendDirection: "up",
@@ -69,16 +69,16 @@ export const mockCandidates = [
             fitScore: "8.7/10",
             level: "Senior",
             confidence: "High",
-            quote: "Sarah demonstrates strong React expertise with production experience. Would be a valuable addition to any frontend team."
+            quote: "Rajendra demonstrates strong React expertise with production experience. Would be a valuable addition to any frontend team."
         }
     },
     {
         id: "102",
-        name: "Michael Rodriguez",
+        name: "Venkat",
         role: "Full Stack Engineer",
-        experience: "8 yrs",
-        location: "Austin, TX",
-        email: "m.rodriguez@email.com",
+        experience: "5 yrs",
+        location: "Bangalore, Karnataka",
+        email: "venkat12@email.com",
         aiScore: 9.1,
         trend: "Top 5%",
         trendDirection: "neutral",
@@ -136,16 +136,16 @@ export const mockCandidates = [
             fitScore: "9.1/10",
             level: "Staff Engineer",
             confidence: "Very High",
-            quote: "Michael is a top-tier backend engineer who can comfortably handle full-stack tasks. His system design skills are exceptional."
+            quote: "Venkata is a top-tier backend engineer who can comfortably handle full-stack tasks. His system design skills are exceptional."
         }
     },
     {
         id: "103",
-        name: "Alex Foster",
+        name: "Siva Ganesh",
         role: "AI/ML Engineer",
         experience: "4 yrs",
-        location: "New York, NY",
-        email: "alex.foster@email.com",
+        location: "Mumbai, Maharashtra",
+        email: "siva.ganesh@email.com",
         aiScore: 9.4,
         trend: "HOT",
         trendDirection: "up",
@@ -203,16 +203,16 @@ export const mockCandidates = [
             fitScore: "9.4/10",
             level: "Senior ML Engineer",
             confidence: "High",
-            quote: "Alex is a rare find with deep theoretical knowledge and practical LLM deployment skills."
+            quote: "Siva is a rare find with deep theoretical knowledge and practical LLM deployment skills."
         }
     },
     {
         id: "104",
-        name: "Priya Patel",
+        name: "Priya Reddy",
         role: "Backend Engineer",
         experience: "3 yrs",
-        location: "Chicago, IL",
-        email: "priya.p@email.com",
+        location: "Chennai, Tamil Nadu",
+        email: "priya.reddy@email.com",
         aiScore: 7.2,
         trend: "Needs deep dive",
         trendDirection: "down",
@@ -270,11 +270,11 @@ export const mockCandidates = [
     },
     {
         id: "105",
-        name: "David Kim",
+        name: "Vikram Singh",
         role: "DevOps Engineer",
         experience: "6 yrs",
-        location: "Seattle, WA",
-        email: "david.kim@email.com",
+        location: "Pune, Maharashtra",
+        email: "vikram.singh@email.com",
         aiScore: 8.9,
         trend: "Steady",
         trendDirection: "neutral",
@@ -332,7 +332,7 @@ export const mockCandidates = [
             fitScore: "8.9/10",
             level: "Senior DevOps",
             confidence: "High",
-            quote: "David is a rock-solid infrastructure engineer who brings stability and automation expertise."
+            quote: "Vikram is a rock-solid infrastructure engineer who brings stability and automation expertise."
         }
     }
 ];

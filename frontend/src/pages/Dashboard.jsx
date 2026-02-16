@@ -74,13 +74,6 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* 2. NAVIGATION */}
-            <div className="nav">
-                <div className="nav-item active"><FaClipboardList style={{ marginRight: '6px' }} /> Candidates</div>
-                <div className="nav-item"><FaChartBar style={{ marginRight: '6px' }} /> Analytics</div>
-                <div className="nav-item"><FaCog style={{ marginRight: '6px' }} /> Settings</div>
-                <div className="nav-item"><FaFolderOpen style={{ marginRight: '6px' }} /> Interviews</div>
-            </div>
 
             {/* 3. STATS BAR */}
             <div className="stats-bar" style={{ padding: '20px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-light)' }}>
