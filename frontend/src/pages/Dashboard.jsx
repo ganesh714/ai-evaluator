@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import {
     FaBrain, FaUserCircle, FaClipboardList, FaChartBar, FaCog, FaFolderOpen,
     FaBullseye, FaFileExport, FaBolt, FaReact, FaNodeJs, FaPython, FaAws,
@@ -10,6 +11,20 @@ import { mockCandidates } from '../data/mockData';
 
 const Dashboard = () => {
     const navigate = useNavigate();
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
+
+    // Calculate indices
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentCandidates = mockCandidates.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(mockCandidates.length / itemsPerPage);
+
+    // Change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const nextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+    const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
 
     // Helper to determine skill icon
     const getSkillIcon = (skillName) => {
@@ -82,7 +97,7 @@ const Dashboard = () => {
                         <FaBullseye style={{ color: 'var(--primary-blue)' }} /> {mockCandidates.length} Candidates • 5 New This Week
                     </div>
                     <div style={{ color: '#64748b', fontSize: '14px', marginTop: '4px' }}>
-                        Showing all active candidates
+                        Showing {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, mockCandidates.length)} of {mockCandidates.length} active candidates
                     </div>
                 </div>
                 <div style={{ padding: '8px 16px', background: 'white', border: '1px solid var(--border-light)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '500', cursor: 'pointer' }}>
@@ -157,7 +172,7 @@ const Dashboard = () => {
                     </div>
 
                     {/* DYNAMIC CARD GENERATION */}
-                    {mockCandidates.map((candidate) => (
+                    {currentCandidates.map((candidate) => (
                         <div
                             key={candidate.id}
                             className="candidate-card"
@@ -202,15 +217,65 @@ const Dashboard = () => {
                         </div>
                     ))}
 
-                    {/* PAGINATION (Static for now) */}
+                    {/* PAGINATION */}
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginTop: '32px', color: '#64748b', fontSize: '14px' }}>
-                        <span style={{ cursor: 'pointer' }}><FaCaretLeft size={18} /></span>
-                        <span style={{ background: 'var(--primary-blue)', color: 'white', padding: '4px 10px', borderRadius: '6px', fontWeight: 'bold' }}>1</span>
-                        <span style={{ cursor: 'pointer' }}>2</span>
-                        <span style={{ cursor: 'pointer' }}>...</span>
-                        <span style={{ cursor: 'pointer' }}><FaCaretRight size={18} /></span>
-                    </div>
+                        <button
+                            onClick={prevPage}
+                            disabled={currentPage === 1}
+                            style={{
+                                cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
+                                border: 'none',
+                                background: 'transparent',
+                                opacity: currentPage === 1 ? 0.5 : 1,
+                                display: 'flex', alignItems: 'center'
+                            }}
+                        >
+                            <FaCaretLeft size={18} />
+                        </button>
 
+                        {/* Page Numbers - displaying window of pages if many */}
+                        {Array.from({ length: totalPages }, (_, i) => i + 1)
+                            .filter(num => num === 1 || num === totalPages || (num >= currentPage - 1 && num <= currentPage + 1))
+                            .reduce((acc, num, index, array) => {
+                                if (index > 0 && array[index - 1] !== num - 1) {
+                                    acc.push(-1); // Separator
+                                }
+                                acc.push(num);
+                                return acc;
+                            }, [])
+                            .map((num, idx) => (
+                                num === -1 ? <span key={`sep-${idx}`}>...</span> :
+                                    <span
+                                        key={num}
+                                        onClick={() => paginate(num)}
+                                        style={{
+                                            background: currentPage === num ? 'var(--primary-blue)' : 'transparent',
+                                            color: currentPage === num ? 'white' : 'inherit',
+                                            padding: '4px 10px',
+                                            borderRadius: '6px',
+                                            fontWeight: 'bold',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        {num}
+                                    </span>
+                            ))
+                        }
+
+                        <button
+                            onClick={nextPage}
+                            disabled={currentPage === totalPages}
+                            style={{
+                                cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
+                                border: 'none',
+                                background: 'transparent',
+                                opacity: currentPage === totalPages ? 0.5 : 1,
+                                display: 'flex', alignItems: 'center'
+                            }}
+                        >
+                            <FaCaretRight size={18} />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
