@@ -3,13 +3,42 @@ import {
     FaBrain, FaUserCircle, FaClipboardList, FaChartBar, FaCog, FaFolderOpen,
     FaBullseye, FaFileExport, FaBolt, FaReact, FaNodeJs, FaPython, FaAws,
     FaJava, FaDatabase, FaLeaf, FaFire, FaSearch, FaPlayCircle, FaTrophy,
-    FaExclamationTriangle, FaArrowUp, FaCaretLeft, FaCaretRight
+    FaExclamationTriangle, FaArrowUp, FaArrowDown, FaMinus, FaCaretLeft, FaCaretRight,
+    FaDocker, FaServer, FaCode // <--- Added FaCode here
 } from 'react-icons/fa';
+import { mockCandidates } from '../data/mockData';
 
 const Dashboard = () => {
     const navigate = useNavigate();
 
-    // Styles for the aiev.html filter fields
+    // Helper to determine skill icon
+    const getSkillIcon = (skillName) => {
+        const name = skillName.toLowerCase();
+        if (name.includes('react')) return <FaReact color="#61dafb" />;
+        if (name.includes('node')) return <FaNodeJs color="#339933" />;
+        if (name.includes('python') || name.includes('pytorch')) return <FaPython color="#3776AB" />;
+        if (name.includes('java')) return <FaJava color="#5382a1" />;
+        if (name.includes('aws')) return <FaAws color="#FF9900" />;
+        if (name.includes('sql') || name.includes('database')) return <FaDatabase color="#336791" />;
+        if (name.includes('spring')) return <FaLeaf color="#6db33f" />;
+        if (name.includes('docker') || name.includes('kubernetes')) return <FaDocker color="#2496ED" />;
+        return <FaCode color="#64748b" />; // Default icon now works
+    };
+
+    // Helper for trend icon
+    const getTrendIcon = (direction) => {
+        if (direction === 'up') return <FaArrowUp />;
+        if (direction === 'down') return <FaArrowDown />;
+        return <FaMinus />;
+    };
+
+    const getTrendColor = (direction) => {
+        if (direction === 'up') return '#16a34a'; // Green
+        if (direction === 'down') return '#dc2626'; // Red
+        return '#64748b'; // Grey
+    };
+
+    // Styles for the filter inputs
     const inputStyle = {
         width: '100%',
         padding: '10px',
@@ -57,10 +86,10 @@ const Dashboard = () => {
             <div className="stats-bar" style={{ padding: '20px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-light)' }}>
                 <div>
                     <div style={{ fontSize: '18px', fontWeight: '600', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <FaBullseye style={{ color: 'var(--primary-blue)' }} /> 247 Candidates • 38 New This Week
+                        <FaBullseye style={{ color: 'var(--primary-blue)' }} /> {mockCandidates.length} Candidates • 5 New This Week
                     </div>
                     <div style={{ color: '#64748b', fontSize: '14px', marginTop: '4px' }}>
-                        After applying filters: 4 matches
+                        Showing all active candidates
                     </div>
                 </div>
                 <div style={{ padding: '8px 16px', background: 'white', border: '1px solid var(--border-light)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '500', cursor: 'pointer' }}>
@@ -71,7 +100,7 @@ const Dashboard = () => {
             {/* 4. MAIN LAYOUT */}
             <div className="main-layout">
 
-                {/* FILTERS SECTION (Right Side - from aiev.html) */}
+                {/* FILTERS SECTION (Right Side) */}
                 <div className="filters-section">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
                         <h3 style={{ margin: 0, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '16px' }}>
@@ -85,7 +114,7 @@ const Dashboard = () => {
                         <select style={inputStyle}>
                             <option value="">Select a skill</option>
                             <option value="Java">Java</option>
-                            <option value="Angular">Angular</option>
+                            <option value="React">React</option>
                             <option value="Python">Python</option>
                         </select>
                     </div>
@@ -120,15 +149,12 @@ const Dashboard = () => {
                         onMouseOut={(e) => e.target.style.backgroundColor = 'var(--primary-blue)'}>
                         APPLY FILTERS
                     </button>
-                    <div style={{ textAlign: 'center', marginTop: '12px', color: '#94a3b8', fontSize: '13px' }}>
-                        4 candidates match
-                    </div>
                 </div>
 
                 {/* CANDIDATES SECTION (Center) */}
                 <div className="candidates-section">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                        <div style={{ fontWeight: '600', color: 'var(--text-main)' }}>CANDIDATES</div>
+                        <div style={{ fontWeight: '600', color: 'var(--text-main)' }}>CANDIDATES LIST</div>
                         <select style={{ padding: '8px 16px', border: '1px solid var(--border-light)', borderRadius: '8px', fontSize: '14px', background: 'white' }}>
                             <option>Sort: AI Score ▼</option>
                             <option>Experience: High to Low</option>
@@ -137,124 +163,59 @@ const Dashboard = () => {
                         </select>
                     </div>
 
-                    {/* CARD 1: SARAH CHEN */}
-                    <div className="candidate-card" style={{ borderLeft: '4px solid #22c55e' }} onClick={() => navigate('/candidate/101')}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(135deg, var(--primary-blue), var(--accent-orange))', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>SC</div>
-                                <div>
-                                    <h4 style={{ margin: '0 0 2px 0', fontSize: '16px', color: 'var(--text-main)' }}>Sarah Chen</h4>
-                                    <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Senior Frontend Developer • 5 yrs</p>
+                    {/* DYNAMIC CARD GENERATION */}
+                    {mockCandidates.map((candidate) => (
+                        <div
+                            key={candidate.id}
+                            className="candidate-card"
+                            style={{ borderLeft: `4px solid ${candidate.aiScore >= 9.0 ? '#22c55e' : candidate.aiScore >= 8.0 ? 'var(--primary-blue)' : '#eab308'}` }}
+                            onClick={() => navigate(`/candidate/${candidate.id}`)}
+                        >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                    <div style={{ width: '40px', height: '40px', background: 'linear-gradient(135deg, var(--primary-blue), var(--accent-orange))', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
+                                        {candidate.name.split(' ').map(n => n[0]).join('')}
+                                    </div>
+                                    <div>
+                                        <h4 style={{ margin: '0 0 2px 0', fontSize: '16px', color: 'var(--text-main)' }}>{candidate.name}</h4>
+                                        <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>{candidate.role} • {candidate.experience}</p>
+                                    </div>
+                                </div>
+                                <div style={{ padding: '6px 12px', background: '#dcfce7', color: '#166534', borderRadius: '20px', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <FaBrain /> AI: {candidate.aiScore}/10
+                                    <span style={{ color: getTrendColor(candidate.trendDirection), marginLeft: '4px', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                                        {getTrendIcon(candidate.trendDirection)} {candidate.trend}
+                                    </span>
                                 </div>
                             </div>
-                            <div style={{ padding: '6px 12px', background: '#dcfce7', color: '#166534', borderRadius: '20px', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                <FaBrain /> AI: 8.7/10 <span style={{ color: '#16a34a', marginLeft: '4px' }}><FaArrowUp /> +12%</span>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaReact color="#61dafb" /> React <strong>9.2</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ color: '#3178c6', fontWeight: 'bold' }}>TS</span> TypeScript <strong>8.5</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaNodeJs color="#339933" /> Node.js <strong>7.1</strong></span>
-                        </div>
-                        <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>
-                            <span><FaPlayCircle /> 3 interviews</span><span>• Last: Yesterday</span>
-                        </div>
-                        <div style={{ padding: '12px', background: '#f8fafc', borderRadius: '8px', fontSize: '13px', borderLeft: '3px solid var(--primary-blue)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <FaPlayCircle style={{ color: 'var(--primary-blue)' }} /> "explained virtual DOM reconciliation and custom hooks in detail..."
-                        </div>
-                    </div>
 
-                    {/* CARD 2: MICHAEL RODRIGUEZ */}
-                    <div className="candidate-card" style={{ borderLeft: '4px solid #22c55e' }} onClick={() => navigate('/candidate/102')}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(135deg, #3b82f6, #2563eb)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>MR</div>
-                                <div>
-                                    <h4 style={{ margin: '0 0 2px 0', fontSize: '16px', color: 'var(--text-main)' }}>Michael Rodriguez</h4>
-                                    <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Full Stack Engineer • 8 yrs</p>
-                                </div>
+                            {/* Top 3 Skills Tags */}
+                            <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
+                                {candidate.skills.slice(0, 3).map((skill, index) => (
+                                    <span key={index} style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                        {getSkillIcon(skill.name)} {skill.name} <strong>{skill.score}</strong>
+                                    </span>
+                                ))}
                             </div>
-                            <div style={{ padding: '6px 12px', background: '#dcfce7', color: '#166534', borderRadius: '20px', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                <FaBrain /> AI: 9.1/10 <span style={{ marginLeft: '4px' }}><FaTrophy style={{ color: '#eab308' }} /> Top 5%</span>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaPython color="#3776AB" /> Python <strong>8.9</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaAws color="#FF9900" /> AWS <strong>8.2</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><span style={{ color: '#092E20', fontWeight: 'bold' }}>dj</span> Django <strong>8.7</strong></span>
-                        </div>
-                        <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>
-                            <span><FaPlayCircle /> 4 interviews</span><span>• Last: 2 days ago</span>
-                        </div>
-                        <div style={{ display: 'flex', gap: '16px', fontSize: '13px', color: '#475569' }}>
-                            <span>📊 Technical: 9.0</span><span>💬 Comm: 8.2</span><span>🧩 Problem: 9.1</span>
-                        </div>
-                    </div>
 
-                    {/* CARD 3: ALEX FOSTER */}
-                    <div className="candidate-card" style={{ borderLeft: '4px solid #22c55e' }} onClick={() => navigate('/candidate/103')}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(135deg, #a855f7, #9333ea)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>AF</div>
-                                <div>
-                                    <h4 style={{ margin: '0 0 2px 0', fontSize: '16px', color: 'var(--text-main)' }}>Alex Foster</h4>
-                                    <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>AI/ML Engineer • 4 yrs</p>
-                                </div>
+                            <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>
+                                <span><FaPlayCircle /> {candidate.interviewCount} interviews</span><span>• Last: {candidate.lastInterview}</span>
                             </div>
-                            <div style={{ padding: '6px 12px', background: '#dcfce7', color: '#166534', borderRadius: '20px', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                <FaBrain /> AI: 9.4/10 <span style={{ marginLeft: '4px', color: '#ef4444' }}><FaFire /> HOT</span>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaFire color="#ee4c2c" /> PyTorch <strong>9.0</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaBrain color="var(--primary-blue)" /> LLMs <strong>8.7</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaSearch color="#64748b" /> RAG <strong>8.9</strong></span>
-                        </div>
-                        <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>
-                            <span><FaPlayCircle /> 3 interviews</span><span>• Last: Today</span>
-                        </div>
-                        <div style={{ padding: '12px', background: '#f8fafc', borderRadius: '8px', fontSize: '13px', borderLeft: '3px solid var(--primary-blue)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <FaTrophy style={{ color: '#eab308' }} /> "Explained attention mechanism and transformer architecture in detail"
-                        </div>
-                    </div>
 
-                    {/* CARD 4: PRIYA PATEL */}
-                    <div className="candidate-card" style={{ borderLeft: '4px solid #eab308' }} onClick={() => navigate('/candidate/104')}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(135deg, #eab308, #ca8a04)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>PP</div>
-                                <div>
-                                    <h4 style={{ margin: '0 0 2px 0', fontSize: '16px', color: 'var(--text-main)' }}>Priya Patel</h4>
-                                    <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Backend Engineer • 3 yrs</p>
-                                </div>
-                            </div>
-                            <div style={{ padding: '6px 12px', background: '#fef9c3', color: '#854d0e', borderRadius: '20px', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                <FaBrain /> AI: 7.2/10 <span style={{ marginLeft: '4px' }}><FaExclamationTriangle /> Needs deep dive</span>
+                            {/* Quote or Summary Snippet */}
+                            <div style={{ padding: '12px', background: '#f8fafc', borderRadius: '8px', fontSize: '13px', borderLeft: '3px solid var(--primary-blue)', display: 'flex', alignItems: 'center', gap: '8px', color: '#475569' }}>
+                                {candidate.aiAnalysis.quote ? `"${candidate.aiAnalysis.quote.substring(0, 80)}..."` : "AI Summary available in profile."}
                             </div>
                         </div>
-                        <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaJava color="#5382a1" /> Java <strong>7.5</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaLeaf color="#6db33f" /> Spring <strong>6.8</strong></span>
-                            <span style={{ padding: '4px 10px', background: '#f8fafc', borderRadius: '20px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px' }}><FaDatabase color="#336791" /> SQL <strong>7.9</strong></span>
-                        </div>
-                        <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: '#64748b', marginBottom: '12px' }}>
-                            <span><FaPlayCircle /> 2 interviews</span><span>• Last: 5 days ago</span>
-                        </div>
-                        <div style={{ background: '#fff7ed', padding: '10px 12px', borderRadius: '8px', fontSize: '13px', color: '#9a3412', borderLeft: '3px solid #f97316' }}>
-                            "Good at CRUD operations, needs system design practice"
-                        </div>
-                    </div>
+                    ))}
 
-                    {/* PAGINATION */}
+                    {/* PAGINATION (Static for now) */}
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginTop: '32px', color: '#64748b', fontSize: '14px' }}>
                         <span style={{ cursor: 'pointer' }}><FaCaretLeft size={18} /></span>
                         <span style={{ background: 'var(--primary-blue)', color: 'white', padding: '4px 10px', borderRadius: '6px', fontWeight: 'bold' }}>1</span>
                         <span style={{ cursor: 'pointer' }}>2</span>
-                        <span style={{ cursor: 'pointer' }}>3</span>
-                        <span>...</span>
-                        <span style={{ cursor: 'pointer' }}>12</span>
+                        <span style={{ cursor: 'pointer' }}>...</span>
                         <span style={{ cursor: 'pointer' }}><FaCaretRight size={18} /></span>
-                        <span style={{ marginLeft: '16px' }}>1-4 of 247</span>
                     </div>
 
                 </div>
