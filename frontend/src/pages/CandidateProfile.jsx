@@ -14,17 +14,18 @@ const CandidateProfile = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // Find the candidate from the data file
     const candidate = mockCandidates.find(c => c.id === id);
 
     // States
-    const [activeTab, setActiveTab] = useState('skills');
+    const [activeTab, setActiveTab] = useState('skills'); // 'skills', 'interviews', or 'resume'
     const [selectedFeedback, setSelectedFeedback] = useState(null);
-
-    // State to track current video URLs (initialized empty, populated in useEffect)
     const [videoState, setVideoState] = useState({});
+    const [resumeExists, setResumeExists] = useState(true);
 
-    // Initialize video state when candidate loads
+    // The path where you are storing the resumes in your Vite project
+    const resumePath = `/src/data/resumes/${id}.pdf`;
+
+    // Initialize video state
     useEffect(() => {
         if (candidate && candidate.interviews) {
             const initialVideos = {};
@@ -35,15 +36,28 @@ const CandidateProfile = () => {
         }
     }, [candidate]);
 
+    // Check if the resume file actually exists
+    useEffect(() => {
+        if (activeTab === 'resume') {
+            fetch(resumePath, { method: 'HEAD' })
+                .then(res => {
+                    if (res.ok) {
+                        setResumeExists(true);
+                    } else {
+                        setResumeExists(false);
+                    }
+                })
+                .catch(() => setResumeExists(false));
+        }
+    }, [activeTab, resumePath]);
+
     if (!candidate) {
         return <div style={{ padding: '40px', textAlign: 'center' }}>Candidate not found</div>;
     }
 
     const closeModal = () => setSelectedFeedback(null);
 
-    // Function to jump video to a specific time
     const jumpToTime = (interviewId, seconds) => {
-        // Get the base video URL from the candidate data to ensure we don't lose it
         const baseVideo = candidate.interviews.find(i => i.id === interviewId)?.video;
         if (baseVideo) {
             setVideoState(prev => ({
@@ -102,14 +116,6 @@ const CandidateProfile = () => {
                 >
                     <FaArrowLeft /> Back to Candidates
                 </div>
-                {/* <div style={{ display: 'flex', gap: '12px' }}>
-                    <button className="quick-action-btn" style={{ background: 'white' }}><FaClipboardCheck /> Shortlist</button>
-                    <button className="quick-action-btn" style={{ background: 'white' }}><FaShareAlt /> Share</button>
-                    <button className="quick-action-btn" style={{ background: 'var(--primary-blue)', color: 'white', border: 'none' }}>
-                        <FaCalendarAlt /> Schedule Interview
-                    </button>
-                    <button className="quick-action-btn" style={{ background: 'white', padding: '10px' }}><FaChevronDown /></button>
-                </div> */}
             </div>
 
             {/* 3. PROFILE HEADER */}
@@ -168,8 +174,18 @@ const CandidateProfile = () => {
                 >
                     <FaVideo /> Interviews & AI Summary
                 </div>
-                <div className="quick-action-btn" onClick={() => alert(`Backend Not Connected: Downloading Resume for ${candidate.name}...`)}>
-                    <FaDownload /> Download Resume
+
+                {/* NEW RESUME TAB */}
+                <div
+                    className="quick-action-btn"
+                    style={{
+                        background: activeTab === 'resume' ? 'var(--primary-blue)' : '#f8fafc',
+                        color: activeTab === 'resume' ? 'white' : 'var(--text-main)',
+                        borderColor: activeTab === 'resume' ? 'var(--primary-blue)' : 'var(--border-light)'
+                    }}
+                    onClick={() => setActiveTab('resume')}
+                >
+                    <FaFileAlt /> Resume
                 </div>
             </div>
 
@@ -187,7 +203,6 @@ const CandidateProfile = () => {
                                 </span>
                             </div>
 
-                            {/* Dynamic Skills Mapping */}
                             {candidate.skills.map((skill, index) => (
                                 <div key={index} style={{ marginBottom: '20px' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
@@ -258,7 +273,6 @@ const CandidateProfile = () => {
                             {candidate.interviews.map((interview, index) => (
                                 <div key={interview.id} className="interview-card" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'stretch', marginBottom: '24px', borderLeft: index === candidate.interviews.length - 1 ? '4px solid var(--primary-blue)' : '1px solid var(--border-light)' }}>
 
-                                    {/* Left: Video */}
                                     <div style={{ flex: '1 1 300px', maxWidth: '400px' }}>
                                         <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', backgroundColor: '#000' }}>
                                             <iframe
@@ -274,7 +288,6 @@ const CandidateProfile = () => {
                                         </div>
                                     </div>
 
-                                    {/* Right: Content */}
                                     <div style={{ flex: '2 1 400px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                                         <div>
                                             <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -284,7 +297,6 @@ const CandidateProfile = () => {
                                                 <FaBullseye color="var(--primary-blue)" /> Focus: {interview.focus}
                                             </div>
 
-                                            {/* Dynamic Moment Tags */}
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '16px' }}>
                                                 {interview.moments.map((moment, mIndex) => (
                                                     <span key={mIndex} className="moment-tag" onClick={() => jumpToTime(interview.id, moment.seconds)}>
@@ -310,7 +322,6 @@ const CandidateProfile = () => {
                             ))}
                         </div>
 
-                        {/* AI SUMMARY CARD */}
                         <div className="ai-summary" style={{ background: 'linear-gradient(135deg, #f8fafc, #ffffff)', border: '1px solid var(--border-light)', borderRadius: '16px', padding: '28px', marginTop: '16px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
                                 <FaBrain size={28} color="var(--primary-blue)" />
@@ -355,20 +366,52 @@ const CandidateProfile = () => {
                                     <span style={{ display: 'inline-block', padding: '8px 20px', background: '#dcfce7', color: '#166534', borderRadius: '40px', fontWeight: '600' }}>🎯 HIRING RECOMMENDATION: {candidate.aiAnalysis.hiringRecommendation}</span>
                                     <span style={{ color: '#475569' }}>Fit Score: {candidate.aiAnalysis.fitScore} • Level: {candidate.aiAnalysis.level} • Confidence: {candidate.aiAnalysis.confidence}</span>
                                 </div>
-                                <div style={{ marginTop: '16px', color: '#334155' }}>
-                                    <strong>Next Steps:</strong> System design deep dive or team fit interview recommended
-                                </div>
                             </div>
 
                             <div style={{ padding: '20px', background: '#f1f4f9', borderRadius: '12px', borderLeft: '4px solid var(--primary-blue)', marginTop: '20px', fontSize: '16px', lineHeight: '1.6', color: '#1e293b' }}>
                                 <span style={{ fontSize: '20px', color: 'var(--primary-blue)' }}>"</span>
                                 {candidate.aiAnalysis.quote}
                                 <span style={{ fontSize: '20px', color: 'var(--primary-blue)' }}>"</span>
-                                <div style={{ marginTop: '12px', color: '#64748b', fontSize: '13px' }}>— AI Evolution Verdict • {candidate.interviewCount} interviews analyzed • {candidate.confidence} confidence</div>
                             </div>
-
                         </div>
                     </>
+                )}
+
+                {/* ================= TAB 3: RESUME ================= */}
+                {activeTab === 'resume' && (
+                    <div className="section" style={{ display: 'flex', flexDirection: 'column', height: '800px', gridColumn: 'span 2' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                            <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '8px', fontSize: '18px', color: 'var(--text-main)' }}>
+                                <FaFileAlt color="var(--primary-blue)" /> Candidate Resume
+                            </h3>
+
+                            {/* Actual Download Button */}
+                            {resumeExists && (
+                                <a
+                                    href={resumePath}
+                                    download={`${candidate.name.replace(' ', '_')}_Resume.pdf`}
+                                    className="quick-action-btn"
+                                    style={{ background: 'var(--primary-blue)', color: 'white', textDecoration: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '8px', fontWeight: 'bold' }}
+                                >
+                                    <FaDownload /> Download PDF
+                                </a>
+                            )}
+                        </div>
+
+                        {resumeExists ? (
+                            <iframe
+                                src={resumePath}
+                                style={{ width: '100%', height: '100%', border: '1px solid var(--border-light)', borderRadius: '12px', backgroundColor: '#e2e8f0' }}
+                                title={`${candidate.name}'s Resume`}
+                            />
+                        ) : (
+                            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#f8fafc', borderRadius: '12px', border: '2px dashed #cbd5e1' }}>
+                                <FaFileAlt size={64} color="#cbd5e1" style={{ marginBottom: '16px' }} />
+                                <h4 style={{ color: 'var(--text-main)', margin: '0 0 8px 0', fontSize: '20px' }}>Resume Not Uploaded</h4>
+                                <p style={{ color: '#64748b', margin: 0 }}>The resume file ({id}.pdf) could not be found in the system.</p>
+                            </div>
+                        )}
+                    </div>
                 )}
 
             </div>

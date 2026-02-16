@@ -74,24 +74,24 @@ export const mockCandidates = [
     },
     {
         id: "102",
-        name: "Venkat",
-        role: "Full Stack Engineer",
-        experience: "5 yrs",
-        location: "Bangalore, Karnataka",
-        email: "venkat12@email.com",
+        name: "Veera Venkata Ganesh",
+        role: "Full Stack & Game Developer",
+        experience: "2 yrs", // Updated based on internships & project timeline
+        location: "Surampalem, India",
+        email: "evvganesh1@gmail.com",
         aiScore: 9.1,
         trend: "Top 5%",
-        trendDirection: "neutral",
+        trendDirection: "up",
         confidence: "90%",
         topPercentile: "Top 5%",
         interviewCount: 4,
         lastInterview: "2 days ago",
         skills: [
-            { name: "Python", score: 9.4, level: "Expert", evidence: "AsyncIO, Metaclasses, PyTest fixtures" },
-            { name: "AWS", score: 8.9, level: "Advanced", evidence: "Lambda, DynamoDB, CloudFormation" },
-            { name: "Django", score: 8.7, level: "Advanced", evidence: "ORM optimization, middleware, signals" },
-            { name: "React", score: 7.5, level: "Intermediate", evidence: "Functional components, basic hooks" },
-            { name: "Docker", score: 8.8, level: "Advanced", evidence: "Multi-stage builds, compose, networking" }
+            { name: "MERN Stack", score: 9.4, level: "Expert", evidence: "College Intranet Portal, Modular Backend Architecture" },
+            { name: "FastAPI", score: 8.9, level: "Advanced", evidence: "ClassMate App, High-performance APIs" },
+            { name: "Java/DSA", score: 8.7, level: "Advanced", evidence: "5-Star HackerRank, LeetCode Problem Solving" },
+            { name: "AI/ML", score: 8.8, level: "Advanced", evidence: "RAG, Agentic Workflows, FAISS Vector Indexing" },
+            { name: "Unity (C#)", score: 8.5, level: "Intermediate", evidence: "2D Puzzle Game Development, Google Ads Integration" }
         ],
         technicalDepth: [
             { label: "Conceptual Understanding", score: 9.2, dots: 10, filled: 9 },
@@ -112,31 +112,31 @@ export const mockCandidates = [
         },
         interviews: [
             {
-                id: 1, round: "Technical Interview 1", date: "Mar 10, 2024", duration: "60 min",
-                focus: "Python Internals & DB Design", score: 9.2, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Exceptional grasp of Python memory management. Schema design was normalized and scalable.",
-                moments: [{ time: "10:15", seconds: 615, label: "GIL explanation" }, { time: "45:20", seconds: 2720, label: "Indexing strategy" }]
+                id: 1, round: "Technical Round 1", date: "Mar 10, 2024", duration: "60 min",
+                focus: "Full Stack & System Design", score: 9.2, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                summary: "Deep dive into MERN stack architecture. Explained refactoring legacy backend to SOLID principles perfectly.",
+                moments: [{ time: "10:15", seconds: 615, label: "Backend refactoring strategy" }, { time: "45:20", seconds: 2720, label: "Role-based access control" }]
             },
             {
-                id: 2, round: "Technical Interview 2", date: "Mar 18, 2024", duration: "60 min",
-                focus: "Scalable Event System", score: 8.8, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Proposed a solid event-driven architecture using SQS and Lambda. Handled failure scenarios well.",
-                moments: [{ time: "08:30", seconds: 510, label: "Microservices split" }, { time: "35:45", seconds: 2145, label: "Idempotency handling" }]
+                id: 2, round: "Technical Round 2", date: "Mar 18, 2024", duration: "60 min",
+                focus: "AI Agents & Optimization", score: 8.8, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                summary: "Demonstrated strong grasp of RAG and Vector Indexing. Walked through Unity game logic optimization.",
+                moments: [{ time: "08:30", seconds: 510, label: "RAG Pipeline Logic" }, { time: "35:45", seconds: 2145, label: "Unity UI Optimization" }]
             }
         ],
         aiAnalysis: {
             strengths: [
-                { title: "Backend Architecture", level: "Expert", desc: "Deep knowledge of distributed systems and Python" },
-                { title: "Cloud Native", level: "Advanced", desc: "Production experience with serverless patterns" }
+                { title: "Full Stack Architecture", level: "Expert", desc: "Experience building scalable portals using MERN and FastAPI" },
+                { title: "Problem Solving", level: "Advanced", desc: "Strong DSA background with 5-star ratings on HackerRank" }
             ],
             weaknesses: [
-                { title: "Frontend Polish", level: "Intermediate", desc: "Functional React skills but lacks advanced UI patterns" }
+                { title: "Cloud Deployment", level: "Intermediate", desc: "Familiar with local dev, ready for advanced AWS/Azure scaling" }
             ],
             hiringRecommendation: "MUST HIRE",
             fitScore: "9.1/10",
-            level: "Staff Engineer",
+            level: "High Potential Engineer",
             confidence: "Very High",
-            quote: "Venkata is a top-tier backend engineer who can comfortably handle full-stack tasks. His system design skills are exceptional."
+            quote: "Veera Venkata Ganesh is a top-tier developer who bridges the gap between Full Stack Engineering and AI innovation."
         }
     },
     {
