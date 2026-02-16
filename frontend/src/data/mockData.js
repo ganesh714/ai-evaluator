@@ -1,339 +1,933 @@
 export const mockCandidates = [
     {
-        id: "101",
-        name: "Rajendra Mallina",
-        role: "Senior Frontend Developer",
-        experience: "8 yrs",
-        location: "Hyderabad, Telangana",
-        email: "rajendram@email.com",
-        aiScore: 8.7,
-        trend: "+12%",
-        trendDirection: "up",
-        confidence: "83%",
-        topPercentile: "Top 12%",
-        interviewCount: 3,
-        lastInterview: "Yesterday",
-        skills: [
-            { name: "React", score: 9.2, level: "Advanced", evidence: "Virtual DOM, custom hooks, performance profiling" },
-            { name: "TypeScript", score: 8.5, level: "Advanced", evidence: "Generic types, utility types, strict mode" },
-            { name: "Node.js", score: 7.1, level: "Intermediate", evidence: "REST APIs, Express middleware" },
-            { name: "State Mgmt", score: 8.8, level: "Advanced", evidence: "Redux Toolkit, Context API, Zustand" },
-            { name: "Testing", score: 6.5, level: "Needs Work", evidence: "Jest basics, limited E2E experience" }
-        ],
-        technicalDepth: [
-            { label: "Conceptual Understanding", score: 9.0, dots: 10, filled: 9 },
-            { label: "Problem Solving", score: 8.7, dots: 10, filled: 8 },
-            { label: "System Design", score: 7.2, dots: 10, filled: 7 },
-            { label: "Code Quality", score: 8.5, dots: 10, filled: 8 },
-            { label: "Best Practices", score: 8.0, dots: 10, filled: 8 },
-            { label: "Optimization", score: 8.9, dots: 10, filled: 9 }
-        ],
-        communication: {
-            score: 8.2,
-            details: [
-                { label: "Clarity", score: 8.5 },
-                { label: "Structure", score: 8.0 },
-                { label: "Vocabulary", score: 8.3 },
-                { label: "Confidence", score: 8.1 }
-            ]
-        },
-        interviews: [
+        "id": "101",
+        "name": "Rajendra Mallina",
+        "role": "Senior Frontend Developer",
+        "experience": "8 yrs",
+        "location": "Hyderabad, Telangana",
+        "email": "rajendram@email.com",
+        "aiScore": 8.7,
+        "trend": "+12%",
+        "trendDirection": "up",
+        "confidence": "83%",
+        "topPercentile": "Top 12%",
+        "interviewCount": 3,
+        "lastInterview": "Yesterday",
+        "skills": [
             {
-                id: 1, round: "Technical Interview 1", date: "Mar 15, 2024", duration: "45 min",
-                focus: "React fundamentals", score: 8.2, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Strong foundational knowledge. Explained closure, prototype chain confidently.",
-                moments: [{ time: "02:15", seconds: 135, label: "Virtual DOM explanation" }, { time: "12:30", seconds: 750, label: "Custom hook implementation" }]
+                "name": "React",
+                "score": 9.2,
+                "level": "Advanced",
+                "evidence": "Virtual DOM, custom hooks, performance profiling"
             },
             {
-                id: 2, round: "Technical Interview 2", date: "Mar 22, 2024", duration: "60 min",
-                focus: "Frontend Architecture", score: 8.5, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Designed a dashboard with lazy loading. Good knowledge of bundle optimization.",
-                moments: [{ time: "05:50", seconds: 350, label: "Component breakdown" }, { time: "32:15", seconds: 1935, label: "Lazy loading strategy" }]
+                "name": "TypeScript",
+                "score": 8.5,
+                "level": "Advanced",
+                "evidence": "Generic types, utility types, strict mode"
             },
             {
-                id: 3, round: "Technical Interview 3", date: "Mar 29, 2024", duration: "75 min",
-                focus: "Search Autocomplete", score: 9.1, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Efficient implementation with debouncing. Clean component structure.",
-                moments: [{ time: "15:20", seconds: 920, label: "Debounce logic" }, { time: "42:10", seconds: 2530, label: "Caching results" }]
+                "name": "Node.js",
+                "score": 7.1,
+                "level": "Intermediate",
+                "evidence": "REST APIs, Express middleware"
+            },
+            {
+                "name": "State Mgmt",
+                "score": 8.8,
+                "level": "Advanced",
+                "evidence": "Redux Toolkit, Context API, Zustand"
+            },
+            {
+                "name": "Testing",
+                "score": 6.5,
+                "level": "Needs Work",
+                "evidence": "Jest basics, limited E2E experience"
             }
         ],
-        aiAnalysis: {
-            strengths: [
-                { title: "React Architecture", level: "Expert", desc: "Deep understanding of reconciliation and hooks" },
-                { title: "Problem Solving", level: "Advanced", desc: "Methodical approach to complex UI logic" }
+        "technicalDepth": [
+            {
+                "label": "Conceptual Understanding",
+                "score": 9,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Problem Solving",
+                "score": 8.7,
+                "dots": 10,
+                "filled": 8
+            },
+            {
+                "label": "System Design",
+                "score": 7.2,
+                "dots": 10,
+                "filled": 7
+            },
+            {
+                "label": "Code Quality",
+                "score": 8.5,
+                "dots": 10,
+                "filled": 8
+            },
+            {
+                "label": "Best Practices",
+                "score": 8,
+                "dots": 10,
+                "filled": 8
+            },
+            {
+                "label": "Optimization",
+                "score": 8.9,
+                "dots": 10,
+                "filled": 9
+            }
+        ],
+        "communication": {
+            "score": 8.2,
+            "details": [
+                {
+                    "label": "Clarity",
+                    "score": 8.5
+                },
+                {
+                    "label": "Structure",
+                    "score": 8
+                },
+                {
+                    "label": "Vocabulary",
+                    "score": 8.3
+                },
+                {
+                    "label": "Confidence",
+                    "score": 8.1
+                }
+            ]
+        },
+        "interviews": [
+            {
+                "id": 1,
+                "round": "Technical Interview 1",
+                "date": "Mar 15, 2024",
+                "duration": "45 min",
+                "focus": "React fundamentals",
+                "score": 8.2,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Strong foundational knowledge. Explained closure, prototype chain confidently.",
+                "moments": [
+                    {
+                        "time": "02:15",
+                        "seconds": 135,
+                        "label": "Virtual DOM explanation"
+                    },
+                    {
+                        "time": "12:30",
+                        "seconds": 750,
+                        "label": "Custom hook implementation"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "round": "Technical Interview 2",
+                "date": "Mar 22, 2024",
+                "duration": "60 min",
+                "focus": "Frontend Architecture",
+                "score": 8.5,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Designed a dashboard with lazy loading. Good knowledge of bundle optimization.",
+                "moments": [
+                    {
+                        "time": "05:50",
+                        "seconds": 350,
+                        "label": "Component breakdown"
+                    },
+                    {
+                        "time": "32:15",
+                        "seconds": 1935,
+                        "label": "Lazy loading strategy"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "round": "Technical Interview 3",
+                "date": "Mar 29, 2024",
+                "duration": "75 min",
+                "focus": "Search Autocomplete",
+                "score": 9.1,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Efficient implementation with debouncing. Clean component structure.",
+                "moments": [
+                    {
+                        "time": "15:20",
+                        "seconds": 920,
+                        "label": "Debounce logic"
+                    },
+                    {
+                        "time": "42:10",
+                        "seconds": 2530,
+                        "label": "Caching results"
+                    }
+                ]
+            }
+        ],
+        "aiAnalysis": {
+            "strengths": [
+                {
+                    "title": "React Architecture",
+                    "level": "Expert",
+                    "desc": "Deep understanding of reconciliation and hooks"
+                },
+                {
+                    "title": "Problem Solving",
+                    "level": "Advanced",
+                    "desc": "Methodical approach to complex UI logic"
+                }
             ],
-            weaknesses: [
-                { title: "Testing", level: "Intermediate", desc: "Needs more experience with TDD and E2E tools" }
+            "weaknesses": [
+                {
+                    "title": "Testing",
+                    "level": "Intermediate",
+                    "desc": "Needs more experience with TDD and E2E tools"
+                }
             ],
-            hiringRecommendation: "STRONG CONSIDER",
-            fitScore: "8.7/10",
-            level: "Senior",
-            confidence: "High",
-            quote: "Rajendra demonstrates strong React expertise with production experience. Would be a valuable addition to any frontend team."
-        }
+            "hiringRecommendation": "STRONG CONSIDER",
+            "fitScore": "8.7/10",
+            "level": "Senior",
+            "confidence": "High",
+            "quote": "Rajendra demonstrates strong React expertise with production experience. Would be a valuable addition to any frontend team."
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2018
+            }
+        ]
     },
     {
-        id: "102",
-        name: "Veera Venkata Ganesh",
-        role: "Full Stack & Game Developer",
-        experience: "2 yrs", // Updated based on internships & project timeline
-        location: "Surampalem, India",
-        email: "evvganesh1@gmail.com",
-        aiScore: 9.1,
-        trend: "Top 5%",
-        trendDirection: "up",
-        confidence: "90%",
-        topPercentile: "Top 5%",
-        interviewCount: 4,
-        lastInterview: "2 days ago",
-        skills: [
-            { name: "MERN Stack", score: 9.4, level: "Expert", evidence: "College Intranet Portal, Modular Backend Architecture" },
-            { name: "FastAPI", score: 8.9, level: "Advanced", evidence: "ClassMate App, High-performance APIs" },
-            { name: "Java/DSA", score: 8.7, level: "Advanced", evidence: "5-Star HackerRank, LeetCode Problem Solving" },
-            { name: "AI/ML", score: 8.8, level: "Advanced", evidence: "RAG, Agentic Workflows, FAISS Vector Indexing" },
-            { name: "Unity (C#)", score: 8.5, level: "Intermediate", evidence: "2D Puzzle Game Development, Google Ads Integration" }
-        ],
-        technicalDepth: [
-            { label: "Conceptual Understanding", score: 9.2, dots: 10, filled: 9 },
-            { label: "Problem Solving", score: 9.1, dots: 10, filled: 9 },
-            { label: "System Design", score: 8.5, dots: 10, filled: 8 },
-            { label: "Code Quality", score: 8.8, dots: 10, filled: 9 },
-            { label: "Best Practices", score: 9.0, dots: 10, filled: 9 },
-            { label: "Optimization", score: 8.4, dots: 10, filled: 8 }
-        ],
-        communication: {
-            score: 8.2,
-            details: [
-                { label: "Clarity", score: 8.0 },
-                { label: "Structure", score: 8.5 },
-                { label: "Vocabulary", score: 8.0 },
-                { label: "Confidence", score: 8.3 }
-            ]
-        },
-        interviews: [
+        "id": "102",
+        "name": "Veera Venkata Ganesh",
+        "role": "Full Stack & Game Developer",
+        "experience": "2 yrs",
+        "location": "Surampalem, India",
+        "email": "evvganesh1@gmail.com",
+        "aiScore": 9.1,
+        "trend": "Top 5%",
+        "trendDirection": "up",
+        "confidence": "90%",
+        "topPercentile": "Top 5%",
+        "interviewCount": 4,
+        "lastInterview": "2 days ago",
+        "skills": [
             {
-                id: 1, round: "Technical Round 1", date: "Mar 10, 2024", duration: "60 min",
-                focus: "Full Stack & System Design", score: 9.2, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Deep dive into MERN stack architecture. Explained refactoring legacy backend to SOLID principles perfectly.",
-                moments: [{ time: "10:15", seconds: 615, label: "Backend refactoring strategy" }, { time: "45:20", seconds: 2720, label: "Role-based access control" }]
+                "name": "MERN Stack",
+                "score": 9.4,
+                "level": "Expert",
+                "evidence": "College Intranet Portal, Modular Backend Architecture"
             },
             {
-                id: 2, round: "Technical Round 2", date: "Mar 18, 2024", duration: "60 min",
-                focus: "AI Agents & Optimization", score: 8.8, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Demonstrated strong grasp of RAG and Vector Indexing. Walked through Unity game logic optimization.",
-                moments: [{ time: "08:30", seconds: 510, label: "RAG Pipeline Logic" }, { time: "35:45", seconds: 2145, label: "Unity UI Optimization" }]
-            }
-        ],
-        aiAnalysis: {
-            strengths: [
-                { title: "Full Stack Architecture", level: "Expert", desc: "Experience building scalable portals using MERN and FastAPI" },
-                { title: "Problem Solving", level: "Advanced", desc: "Strong DSA background with 5-star ratings on HackerRank" }
-            ],
-            weaknesses: [
-                { title: "Cloud Deployment", level: "Intermediate", desc: "Familiar with local dev, ready for advanced AWS/Azure scaling" }
-            ],
-            hiringRecommendation: "MUST HIRE",
-            fitScore: "9.1/10",
-            level: "High Potential Engineer",
-            confidence: "Very High",
-            quote: "Veera Venkata Ganesh is a top-tier developer who bridges the gap between Full Stack Engineering and AI innovation."
-        }
-    },
-    {
-        id: "103",
-        name: "Siva Ganesh",
-        role: "AI/ML Engineer",
-        experience: "4 yrs",
-        location: "Mumbai, Maharashtra",
-        email: "siva.ganesh@email.com",
-        aiScore: 9.4,
-        trend: "HOT",
-        trendDirection: "up",
-        confidence: "88%",
-        topPercentile: "Top 2%",
-        interviewCount: 3,
-        lastInterview: "Today",
-        skills: [
-            { name: "PyTorch", score: 9.0, level: "Expert", evidence: "Custom autograd functions, distributed training" },
-            { name: "LLMs", score: 8.7, level: "Advanced", evidence: "LoRA fine-tuning, LangChain, vector DBs" },
-            { name: "Computer Vision", score: 8.5, level: "Advanced", evidence: "YOLO v8, segmentation pipelines" },
-            { name: "FastAPI", score: 8.2, level: "Advanced", evidence: "Async inference endpoints, Pydantic" },
-            { name: "MLOps", score: 7.8, level: "Intermediate", evidence: "MLflow, DVC, basic CI/CD for ML" }
-        ],
-        technicalDepth: [
-            { label: "Conceptual Understanding", score: 9.5, dots: 10, filled: 9 },
-            { label: "Problem Solving", score: 9.3, dots: 10, filled: 9 },
-            { label: "System Design", score: 8.8, dots: 10, filled: 9 },
-            { label: "Code Quality", score: 9.1, dots: 10, filled: 9 },
-            { label: "Best Practices", score: 8.9, dots: 10, filled: 9 },
-            { label: "Optimization", score: 9.2, dots: 10, filled: 9 }
-        ],
-        communication: {
-            score: 7.8,
-            details: [
-                { label: "Clarity", score: 7.5 },
-                { label: "Structure", score: 8.0 },
-                { label: "Vocabulary", score: 8.5 },
-                { label: "Confidence", score: 7.2 }
-            ]
-        },
-        interviews: [
-            {
-                id: 1, round: "Technical Interview 1", date: "Mar 28, 2024", duration: "45 min",
-                focus: "Transformers & Backprop", score: 9.5, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Flawless explanation of attention mechanisms and gradient descent nuances.",
-                moments: [{ time: "05:00", seconds: 300, label: "Self-attention math" }, { time: "22:15", seconds: 1335, label: "Vanishing gradient fix" }]
+                "name": "FastAPI",
+                "score": 8.9,
+                "level": "Advanced",
+                "evidence": "ClassMate App, High-performance APIs"
             },
             {
-                id: 2, round: "Technical Interview 2", date: "Apr 02, 2024", duration: "60 min",
-                focus: "RAG Pipeline", score: 9.2, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Built a retrieval pipeline live. Chose correct chunking strategies and embedding models.",
-                moments: [{ time: "12:10", seconds: 730, label: "Vector DB selection" }, { time: "40:50", seconds: 2450, label: "Handling hallucinations" }]
-            }
-        ],
-        aiAnalysis: {
-            strengths: [
-                { title: "LLM Expertise", level: "Expert", desc: "Current on latest architectures (Mistral, Llama)" },
-                { title: "Math Foundation", level: "Expert", desc: "Strong statistics and linear algebra background" }
-            ],
-            weaknesses: [
-                { title: "Communication", level: "Intermediate", desc: "Can get too technical, needs to summarize for stakeholders" }
-            ],
-            hiringRecommendation: "STRONG CONSIDER",
-            fitScore: "9.4/10",
-            level: "Senior ML Engineer",
-            confidence: "High",
-            quote: "Siva is a rare find with deep theoretical knowledge and practical LLM deployment skills."
-        }
-    },
-    {
-        id: "104",
-        name: "Priya Reddy",
-        role: "Backend Engineer",
-        experience: "3 yrs",
-        location: "Chennai, Tamil Nadu",
-        email: "priya.reddy@email.com",
-        aiScore: 7.2,
-        trend: "Needs deep dive",
-        trendDirection: "down",
-        confidence: "75%",
-        topPercentile: "Top 40%",
-        interviewCount: 2,
-        lastInterview: "5 days ago",
-        skills: [
-            { name: "Java", score: 7.5, level: "Intermediate", evidence: "Streams API, Spring Boot basics" },
-            { name: "SQL", score: 7.9, level: "Advanced", evidence: "Complex joins, window functions, stored procs" },
-            { name: "Microservices", score: 6.5, level: "Beginner", evidence: "Theoretical knowledge, limited practical use" },
-            { name: "Kafka", score: 6.0, level: "Beginner", evidence: "Basic consumer/producer concepts" },
-            { name: "Git", score: 8.0, level: "Advanced", evidence: "Rebase, cherry-pick, conventional commits" }
-        ],
-        technicalDepth: [
-            { label: "Conceptual Understanding", score: 7.5, dots: 10, filled: 7 },
-            { label: "Problem Solving", score: 7.0, dots: 10, filled: 7 },
-            { label: "System Design", score: 6.2, dots: 10, filled: 6 },
-            { label: "Code Quality", score: 7.8, dots: 10, filled: 8 },
-            { label: "Best Practices", score: 7.5, dots: 10, filled: 7 },
-            { label: "Optimization", score: 6.9, dots: 10, filled: 7 }
-        ],
-        communication: {
-            score: 7.9,
-            details: [
-                { label: "Clarity", score: 8.0 },
-                { label: "Structure", score: 7.5 },
-                { label: "Vocabulary", score: 7.8 },
-                { label: "Confidence", score: 8.2 }
-            ]
-        },
-        interviews: [
-            {
-                id: 1, round: "Technical Interview 1", date: "Mar 20, 2024", duration: "50 min",
-                focus: "DS & Algorithms", score: 7.2, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Solved the problem but solution was O(n^2). Struggled to optimize to O(n). Good clean code though.",
-                moments: [{ time: "15:00", seconds: 900, label: "Brute force solution" }, { time: "35:20", seconds: 2120, label: "Optimization attempt" }]
-            }
-        ],
-        aiAnalysis: {
-            strengths: [
-                { title: "Database Skills", level: "Strong", desc: "Writes efficient complex queries" },
-                { title: "Code Hygiene", level: "Strong", desc: "Very readable and well-commented code" }
-            ],
-            weaknesses: [
-                { title: "System Design", level: "Junior", desc: "Struggles with distributed system concepts" },
-                { title: "DSA Optimization", level: "Intermediate", desc: "Can solve, but not always optimally" }
-            ],
-            hiringRecommendation: "CONSIDER",
-            fitScore: "7.2/10",
-            level: "Mid-level",
-            confidence: "Medium",
-            quote: "Priya is a solid Java developer for standard CRUD apps but needs mentorship for high-scale systems."
-        }
-    },
-    {
-        id: "105",
-        name: "Vikram Singh",
-        role: "DevOps Engineer",
-        experience: "6 yrs",
-        location: "Pune, Maharashtra",
-        email: "vikram.singh@email.com",
-        aiScore: 8.9,
-        trend: "Steady",
-        trendDirection: "neutral",
-        confidence: "92%",
-        topPercentile: "Top 8%",
-        interviewCount: 3,
-        lastInterview: "Yesterday",
-        skills: [
-            { name: "Kubernetes", score: 9.3, level: "Expert", evidence: "Custom controllers, Helm charts, Istio" },
-            { name: "Terraform", score: 9.0, level: "Expert", evidence: "Module design, state management, drift detection" },
-            { name: "CI/CD", score: 8.8, level: "Advanced", evidence: "GitHub Actions, Jenkins pipelines, ArgoCD" },
-            { name: "Go", score: 7.5, level: "Intermediate", evidence: "Scripting tools, basic CLI apps" },
-            { name: "Security", score: 8.5, level: "Advanced", evidence: "IAM policies, secret management, scanning" }
-        ],
-        technicalDepth: [
-            { label: "Conceptual Understanding", score: 9.1, dots: 10, filled: 9 },
-            { label: "Problem Solving", score: 9.3, dots: 10, filled: 9 },
-            { label: "System Design", score: 8.7, dots: 10, filled: 9 },
-            { label: "Code Quality", score: 8.2, dots: 10, filled: 8 },
-            { label: "Best Practices", score: 9.2, dots: 10, filled: 9 },
-            { label: "Optimization", score: 8.8, dots: 10, filled: 9 }
-        ],
-        communication: {
-            score: 7.5,
-            details: [
-                { label: "Clarity", score: 7.2 },
-                { label: "Structure", score: 7.8 },
-                { label: "Vocabulary", score: 7.5 },
-                { label: "Confidence", score: 7.5 }
-            ]
-        },
-        interviews: [
-            {
-                id: 1, round: "Technical Interview 1", date: "Apr 01, 2024", duration: "60 min",
-                focus: "High Availability K8s", score: 9.0, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Designed a multi-region K8s cluster with failover. Excellent knowledge of networking and ingress.",
-                moments: [{ time: "10:30", seconds: 630, label: "Subnet planning" }, { time: "45:00", seconds: 2700, label: "Disaster recovery strategy" }]
+                "name": "Java/DSA",
+                "score": 8.7,
+                "level": "Advanced",
+                "evidence": "5-Star HackerRank, LeetCode Problem Solving"
             },
             {
-                id: 2, round: "Technical Interview 2", date: "Apr 03, 2024", duration: "45 min",
-                focus: "Debug Production Outage", score: 8.8, video: "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                summary: "Systematic debugging approach. Checked metrics first, then logs. Identified root cause (OOMKill) quickly.",
-                moments: [{ time: "05:00", seconds: 300, label: "Checking Prometheus metrics" }, { time: "25:15", seconds: 1515, label: "Fixing resource limits" }]
+                "name": "AI/ML",
+                "score": 8.8,
+                "level": "Advanced",
+                "evidence": "RAG, Agentic Workflows, FAISS Vector Indexing"
+            },
+            {
+                "name": "Unity (C#)",
+                "score": 8.5,
+                "level": "Intermediate",
+                "evidence": "2D Puzzle Game Development, Google Ads Integration"
             }
         ],
-        aiAnalysis: {
-            strengths: [
-                { title: "Kubernetes", level: "Expert", desc: "Deep operational knowledge of K8s internals" },
-                { title: "IaC", level: "Expert", desc: "Writes clean, reusable Terraform code" }
+        "technicalDepth": [
+            {
+                "label": "Conceptual Understanding",
+                "score": 9.2,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Problem Solving",
+                "score": 9.1,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "System Design",
+                "score": 8.5,
+                "dots": 10,
+                "filled": 8
+            },
+            {
+                "label": "Code Quality",
+                "score": 8.8,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Best Practices",
+                "score": 9,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Optimization",
+                "score": 8.4,
+                "dots": 10,
+                "filled": 8
+            }
+        ],
+        "communication": {
+            "score": 8.2,
+            "details": [
+                {
+                    "label": "Clarity",
+                    "score": 8
+                },
+                {
+                    "label": "Structure",
+                    "score": 8.5
+                },
+                {
+                    "label": "Vocabulary",
+                    "score": 8
+                },
+                {
+                    "label": "Confidence",
+                    "score": 8.3
+                }
+            ]
+        },
+        "interviews": [
+            {
+                "id": 1,
+                "round": "Technical Round 1",
+                "date": "Mar 10, 2024",
+                "duration": "60 min",
+                "focus": "Full Stack & System Design",
+                "score": 9.2,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Deep dive into MERN stack architecture. Explained refactoring legacy backend to SOLID principles perfectly.",
+                "moments": [
+                    {
+                        "time": "10:15",
+                        "seconds": 615,
+                        "label": "Backend refactoring strategy"
+                    },
+                    {
+                        "time": "45:20",
+                        "seconds": 2720,
+                        "label": "Role-based access control"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "round": "Technical Round 2",
+                "date": "Mar 18, 2024",
+                "duration": "60 min",
+                "focus": "AI Agents & Optimization",
+                "score": 8.8,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Demonstrated strong grasp of RAG and Vector Indexing. Walked through Unity game logic optimization.",
+                "moments": [
+                    {
+                        "time": "08:30",
+                        "seconds": 510,
+                        "label": "RAG Pipeline Logic"
+                    },
+                    {
+                        "time": "35:45",
+                        "seconds": 2145,
+                        "label": "Unity UI Optimization"
+                    }
+                ]
+            }
+        ],
+        "aiAnalysis": {
+            "strengths": [
+                {
+                    "title": "Full Stack Architecture",
+                    "level": "Expert",
+                    "desc": "Experience building scalable portals using MERN and FastAPI"
+                },
+                {
+                    "title": "Problem Solving",
+                    "level": "Advanced",
+                    "desc": "Strong DSA background with 5-star ratings on HackerRank"
+                }
             ],
-            weaknesses: [
-                { title: "Coding", level: "Intermediate", desc: "Scripting is strong, but application dev skills are average" }
+            "weaknesses": [
+                {
+                    "title": "Cloud Deployment",
+                    "level": "Intermediate",
+                    "desc": "Familiar with local dev, ready for advanced AWS/Azure scaling"
+                }
             ],
-            hiringRecommendation: "HIRE",
-            fitScore: "8.9/10",
-            level: "Senior DevOps",
-            confidence: "High",
-            quote: "Vikram is a rock-solid infrastructure engineer who brings stability and automation expertise."
-        }
+            "hiringRecommendation": "MUST HIRE",
+            "fitScore": "9.1/10",
+            "level": "High Potential Engineer",
+            "confidence": "Very High",
+            "quote": "Veera Venkata Ganesh is a top-tier developer who bridges the gap between Full Stack Engineering and AI innovation."
+        },
+        "education": [
+            {
+                "degree": "BCA",
+                "branch": "Computer Applications",
+                "year": 2024
+            }
+        ]
+    },
+    {
+        "id": "103",
+        "name": "Siva Ganesh",
+        "role": "AI/ML Engineer",
+        "experience": "4 yrs",
+        "location": "Mumbai, Maharashtra",
+        "email": "siva.ganesh@email.com",
+        "aiScore": 9.4,
+        "trend": "HOT",
+        "trendDirection": "up",
+        "confidence": "88%",
+        "topPercentile": "Top 2%",
+        "interviewCount": 3,
+        "lastInterview": "Today",
+        "skills": [
+            {
+                "name": "PyTorch",
+                "score": 9,
+                "level": "Expert",
+                "evidence": "Custom autograd functions, distributed training"
+            },
+            {
+                "name": "LLMs",
+                "score": 8.7,
+                "level": "Advanced",
+                "evidence": "LoRA fine-tuning, LangChain, vector DBs"
+            },
+            {
+                "name": "Computer Vision",
+                "score": 8.5,
+                "level": "Advanced",
+                "evidence": "YOLO v8, segmentation pipelines"
+            },
+            {
+                "name": "FastAPI",
+                "score": 8.2,
+                "level": "Advanced",
+                "evidence": "Async inference endpoints, Pydantic"
+            },
+            {
+                "name": "MLOps",
+                "score": 7.8,
+                "level": "Intermediate",
+                "evidence": "MLflow, DVC, basic CI/CD for ML"
+            }
+        ],
+        "technicalDepth": [
+            {
+                "label": "Conceptual Understanding",
+                "score": 9.5,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Problem Solving",
+                "score": 9.3,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "System Design",
+                "score": 8.8,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Code Quality",
+                "score": 9.1,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Best Practices",
+                "score": 8.9,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Optimization",
+                "score": 9.2,
+                "dots": 10,
+                "filled": 9
+            }
+        ],
+        "communication": {
+            "score": 7.8,
+            "details": [
+                {
+                    "label": "Clarity",
+                    "score": 7.5
+                },
+                {
+                    "label": "Structure",
+                    "score": 8
+                },
+                {
+                    "label": "Vocabulary",
+                    "score": 8.5
+                },
+                {
+                    "label": "Confidence",
+                    "score": 7.2
+                }
+            ]
+        },
+        "interviews": [
+            {
+                "id": 1,
+                "round": "Technical Interview 1",
+                "date": "Mar 28, 2024",
+                "duration": "45 min",
+                "focus": "Transformers & Backprop",
+                "score": 9.5,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Flawless explanation of attention mechanisms and gradient descent nuances.",
+                "moments": [
+                    {
+                        "time": "05:00",
+                        "seconds": 300,
+                        "label": "Self-attention math"
+                    },
+                    {
+                        "time": "22:15",
+                        "seconds": 1335,
+                        "label": "Vanishing gradient fix"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "round": "Technical Interview 2",
+                "date": "Apr 02, 2024",
+                "duration": "60 min",
+                "focus": "RAG Pipeline",
+                "score": 9.2,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Built a retrieval pipeline live. Chose correct chunking strategies and embedding models.",
+                "moments": [
+                    {
+                        "time": "12:10",
+                        "seconds": 730,
+                        "label": "Vector DB selection"
+                    },
+                    {
+                        "time": "40:50",
+                        "seconds": 2450,
+                        "label": "Handling hallucinations"
+                    }
+                ]
+            }
+        ],
+        "aiAnalysis": {
+            "strengths": [
+                {
+                    "title": "LLM Expertise",
+                    "level": "Expert",
+                    "desc": "Current on latest architectures (Mistral, Llama)"
+                },
+                {
+                    "title": "Math Foundation",
+                    "level": "Expert",
+                    "desc": "Strong statistics and linear algebra background"
+                }
+            ],
+            "weaknesses": [
+                {
+                    "title": "Communication",
+                    "level": "Intermediate",
+                    "desc": "Can get too technical, needs to summarize for stakeholders"
+                }
+            ],
+            "hiringRecommendation": "STRONG CONSIDER",
+            "fitScore": "9.4/10",
+            "level": "Senior ML Engineer",
+            "confidence": "High",
+            "quote": "Siva is a rare find with deep theoretical knowledge and practical LLM deployment skills."
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Software Engineering",
+                "year": 2022
+            }
+        ]
+    },
+    {
+        "id": "104",
+        "name": "Priya Reddy",
+        "role": "Backend Engineer",
+        "experience": "3 yrs",
+        "location": "Chennai, Tamil Nadu",
+        "email": "priya.reddy@email.com",
+        "aiScore": 7.2,
+        "trend": "Needs deep dive",
+        "trendDirection": "down",
+        "confidence": "75%",
+        "topPercentile": "Top 40%",
+        "interviewCount": 2,
+        "lastInterview": "5 days ago",
+        "skills": [
+            {
+                "name": "Java",
+                "score": 7.5,
+                "level": "Intermediate",
+                "evidence": "Streams API, Spring Boot basics"
+            },
+            {
+                "name": "SQL",
+                "score": 7.9,
+                "level": "Advanced",
+                "evidence": "Complex joins, window functions, stored procs"
+            },
+            {
+                "name": "Microservices",
+                "score": 6.5,
+                "level": "Beginner",
+                "evidence": "Theoretical knowledge, limited practical use"
+            },
+            {
+                "name": "Kafka",
+                "score": 6,
+                "level": "Beginner",
+                "evidence": "Basic consumer/producer concepts"
+            },
+            {
+                "name": "Git",
+                "score": 8,
+                "level": "Advanced",
+                "evidence": "Rebase, cherry-pick, conventional commits"
+            }
+        ],
+        "technicalDepth": [
+            {
+                "label": "Conceptual Understanding",
+                "score": 7.5,
+                "dots": 10,
+                "filled": 7
+            },
+            {
+                "label": "Problem Solving",
+                "score": 7,
+                "dots": 10,
+                "filled": 7
+            },
+            {
+                "label": "System Design",
+                "score": 6.2,
+                "dots": 10,
+                "filled": 6
+            },
+            {
+                "label": "Code Quality",
+                "score": 7.8,
+                "dots": 10,
+                "filled": 8
+            },
+            {
+                "label": "Best Practices",
+                "score": 7.5,
+                "dots": 10,
+                "filled": 7
+            },
+            {
+                "label": "Optimization",
+                "score": 6.9,
+                "dots": 10,
+                "filled": 7
+            }
+        ],
+        "communication": {
+            "score": 7.9,
+            "details": [
+                {
+                    "label": "Clarity",
+                    "score": 8
+                },
+                {
+                    "label": "Structure",
+                    "score": 7.5
+                },
+                {
+                    "label": "Vocabulary",
+                    "score": 7.8
+                },
+                {
+                    "label": "Confidence",
+                    "score": 8.2
+                }
+            ]
+        },
+        "interviews": [
+            {
+                "id": 1,
+                "round": "Technical Interview 1",
+                "date": "Mar 20, 2024",
+                "duration": "50 min",
+                "focus": "DS & Algorithms",
+                "score": 7.2,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Solved the problem but solution was O(n^2). Struggled to optimize to O(n). Good clean code though.",
+                "moments": [
+                    {
+                        "time": "15:00",
+                        "seconds": 900,
+                        "label": "Brute force solution"
+                    },
+                    {
+                        "time": "35:20",
+                        "seconds": 2120,
+                        "label": "Optimization attempt"
+                    }
+                ]
+            }
+        ],
+        "aiAnalysis": {
+            "strengths": [
+                {
+                    "title": "Database Skills",
+                    "level": "Strong",
+                    "desc": "Writes efficient complex queries"
+                },
+                {
+                    "title": "Code Hygiene",
+                    "level": "Strong",
+                    "desc": "Very readable and well-commented code"
+                }
+            ],
+            "weaknesses": [
+                {
+                    "title": "System Design",
+                    "level": "Junior",
+                    "desc": "Struggles with distributed system concepts"
+                },
+                {
+                    "title": "DSA Optimization",
+                    "level": "Intermediate",
+                    "desc": "Can solve, but not always optimally"
+                }
+            ],
+            "hiringRecommendation": "CONSIDER",
+            "fitScore": "7.2/10",
+            "level": "Mid-level",
+            "confidence": "Medium",
+            "quote": "Priya is a solid Java developer for standard CRUD apps but needs mentorship for high-scale systems."
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Software Engineering",
+                "year": 2023
+            }
+        ]
+    },
+    {
+        "id": "105",
+        "name": "Vikram Singh",
+        "role": "DevOps Engineer",
+        "experience": "6 yrs",
+        "location": "Pune, Maharashtra",
+        "email": "vikram.singh@email.com",
+        "aiScore": 8.9,
+        "trend": "Steady",
+        "trendDirection": "neutral",
+        "confidence": "92%",
+        "topPercentile": "Top 8%",
+        "interviewCount": 3,
+        "lastInterview": "Yesterday",
+        "skills": [
+            {
+                "name": "Kubernetes",
+                "score": 9.3,
+                "level": "Expert",
+                "evidence": "Custom controllers, Helm charts, Istio"
+            },
+            {
+                "name": "Terraform",
+                "score": 9,
+                "level": "Expert",
+                "evidence": "Module design, state management, drift detection"
+            },
+            {
+                "name": "CI/CD",
+                "score": 8.8,
+                "level": "Advanced",
+                "evidence": "GitHub Actions, Jenkins pipelines, ArgoCD"
+            },
+            {
+                "name": "Go",
+                "score": 7.5,
+                "level": "Intermediate",
+                "evidence": "Scripting tools, basic CLI apps"
+            },
+            {
+                "name": "Security",
+                "score": 8.5,
+                "level": "Advanced",
+                "evidence": "IAM policies, secret management, scanning"
+            }
+        ],
+        "technicalDepth": [
+            {
+                "label": "Conceptual Understanding",
+                "score": 9.1,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Problem Solving",
+                "score": 9.3,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "System Design",
+                "score": 8.7,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Code Quality",
+                "score": 8.2,
+                "dots": 10,
+                "filled": 8
+            },
+            {
+                "label": "Best Practices",
+                "score": 9.2,
+                "dots": 10,
+                "filled": 9
+            },
+            {
+                "label": "Optimization",
+                "score": 8.8,
+                "dots": 10,
+                "filled": 9
+            }
+        ],
+        "communication": {
+            "score": 7.5,
+            "details": [
+                {
+                    "label": "Clarity",
+                    "score": 7.2
+                },
+                {
+                    "label": "Structure",
+                    "score": 7.8
+                },
+                {
+                    "label": "Vocabulary",
+                    "score": 7.5
+                },
+                {
+                    "label": "Confidence",
+                    "score": 7.5
+                }
+            ]
+        },
+        "interviews": [
+            {
+                "id": 1,
+                "round": "Technical Interview 1",
+                "date": "Apr 01, 2024",
+                "duration": "60 min",
+                "focus": "High Availability K8s",
+                "score": 9,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Designed a multi-region K8s cluster with failover. Excellent knowledge of networking and ingress.",
+                "moments": [
+                    {
+                        "time": "10:30",
+                        "seconds": 630,
+                        "label": "Subnet planning"
+                    },
+                    {
+                        "time": "45:00",
+                        "seconds": 2700,
+                        "label": "Disaster recovery strategy"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "round": "Technical Interview 2",
+                "date": "Apr 03, 2024",
+                "duration": "45 min",
+                "focus": "Debug Production Outage",
+                "score": 8.8,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Systematic debugging approach. Checked metrics first, then logs. Identified root cause (OOMKill) quickly.",
+                "moments": [
+                    {
+                        "time": "05:00",
+                        "seconds": 300,
+                        "label": "Checking Prometheus metrics"
+                    },
+                    {
+                        "time": "25:15",
+                        "seconds": 1515,
+                        "label": "Fixing resource limits"
+                    }
+                ]
+            }
+        ],
+        "aiAnalysis": {
+            "strengths": [
+                {
+                    "title": "Kubernetes",
+                    "level": "Expert",
+                    "desc": "Deep operational knowledge of K8s internals"
+                },
+                {
+                    "title": "IaC",
+                    "level": "Expert",
+                    "desc": "Writes clean, reusable Terraform code"
+                }
+            ],
+            "weaknesses": [
+                {
+                    "title": "Coding",
+                    "level": "Intermediate",
+                    "desc": "Scripting is strong, but application dev skills are average"
+                }
+            ],
+            "hiringRecommendation": "HIRE",
+            "fitScore": "8.9/10",
+            "level": "Senior DevOps",
+            "confidence": "High",
+            "quote": "Vikram is a rock-solid infrastructure engineer who brings stability and automation expertise."
+        },
+        "education": [
+            {
+                "degree": "Ph.D",
+                "branch": "Artificial Intelligence",
+                "year": 2020
+            }
+        ]
     },
     {
         "id": "106",
@@ -378,7 +972,7 @@ export const mockCandidates = [
         "technicalDepth": [
             {
                 "label": "Conceptual Understanding",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
@@ -478,7 +1072,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Ayaan Verma shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2017
+            }
+        ]
     },
     {
         "id": "107",
@@ -553,7 +1154,7 @@ export const mockCandidates = [
             }
         ],
         "communication": {
-            "score": 9.0,
+            "score": 9,
             "details": [
                 {
                     "label": "Clarity",
@@ -628,7 +1229,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Vihaan Ahmed shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Software Engineering",
+                "year": 2023
+            }
+        ]
     },
     {
         "id": "108",
@@ -790,7 +1398,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Amaya Chopra shows good potential for the Backend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "Ph.D",
+                "branch": "Artificial Intelligence",
+                "year": 2016
+            }
+        ]
     },
     {
         "id": "109",
@@ -815,7 +1430,7 @@ export const mockCandidates = [
             },
             {
                 "name": "React",
-                "score": 9.0,
+                "score": 9,
                 "level": "Beginner",
                 "evidence": "Demonstrated through projects"
             },
@@ -877,7 +1492,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 9.0
+                    "score": 9
                 },
                 {
                     "label": "Confidence",
@@ -951,7 +1566,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Aayush Kumar shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2022
+            }
+        ]
     },
     {
         "id": "110",
@@ -1008,13 +1630,13 @@ export const mockCandidates = [
             },
             {
                 "label": "Code Quality",
-                "score": 7.0,
+                "score": 7,
                 "dots": 10,
                 "filled": 7
             },
             {
                 "label": "Best Practices",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             },
@@ -1101,7 +1723,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Aarav Nair shows good potential for the Backend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2019
+            }
+        ]
     },
     {
         "id": "111",
@@ -1262,7 +1891,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "Medium",
             "quote": "Sarthak Patel shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Software Engineering",
+                "year": 2022
+            }
+        ]
     },
     {
         "id": "112",
@@ -1401,7 +2037,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Isha Mishra shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "Ph.D",
+                "branch": "Artificial Intelligence",
+                "year": 2019
+            }
+        ]
     },
     {
         "id": "113",
@@ -1426,7 +2069,7 @@ export const mockCandidates = [
             },
             {
                 "name": "MongoDB",
-                "score": 8.0,
+                "score": 8,
                 "level": "Advanced",
                 "evidence": "Demonstrated through projects"
             },
@@ -1498,7 +2141,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 7.0
+                    "score": 7
                 }
             ]
         },
@@ -1557,7 +2200,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Pranav Malhotra shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "Ph.D",
+                "branch": "Artificial Intelligence",
+                "year": 2018
+            }
+        ]
     },
     {
         "id": "114",
@@ -1566,7 +2216,7 @@ export const mockCandidates = [
         "experience": "10 yrs",
         "location": "Noida, Uttar Pradesh",
         "email": "preeti.shetty@email.com",
-        "aiScore": 7.0,
+        "aiScore": 7,
         "trend": "+15%",
         "trendDirection": "up",
         "confidence": "85%",
@@ -1648,7 +2298,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 6.0
+                    "score": 6
                 }
             ]
         },
@@ -1707,7 +2357,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Preeti Shetty shows good potential for the Backend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2016
+            }
+        ]
     },
     {
         "id": "115",
@@ -1732,13 +2389,13 @@ export const mockCandidates = [
             },
             {
                 "name": "Angular",
-                "score": 7.0,
+                "score": 7,
                 "level": "Beginner",
                 "evidence": "Demonstrated through projects"
             },
             {
                 "name": "TypeScript",
-                "score": 7.0,
+                "score": 7,
                 "level": "Intermediate",
                 "evidence": "Demonstrated through projects"
             }
@@ -1770,7 +2427,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Best Practices",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
@@ -1790,7 +2447,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Structure",
-                    "score": 7.0
+                    "score": 7
                 },
                 {
                     "label": "Vocabulary",
@@ -1846,7 +2503,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Darsh Kumar shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2022
+            }
+        ]
     },
     {
         "id": "116",
@@ -1883,7 +2547,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Redux",
-                "score": 9.0,
+                "score": 9,
                 "level": "Expert",
                 "evidence": "Demonstrated through projects"
             },
@@ -2019,7 +2683,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Suman Roy shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2021
+            }
+        ]
     },
     {
         "id": "117",
@@ -2160,7 +2831,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 7.0,
+                "score": 7,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -2186,7 +2857,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Riya Kapoor shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2022
+            }
+        ]
     },
     {
         "id": "118",
@@ -2237,7 +2915,7 @@ export const mockCandidates = [
         "technicalDepth": [
             {
                 "label": "Conceptual Understanding",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             },
@@ -2337,7 +3015,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Priya Naik shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2022
+            }
+        ]
     },
     {
         "id": "119",
@@ -2374,7 +3059,7 @@ export const mockCandidates = [
             },
             {
                 "name": "NumPy",
-                "score": 7.0,
+                "score": 7,
                 "level": "Beginner",
                 "evidence": "Demonstrated through projects"
             }
@@ -2426,7 +3111,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Structure",
-                    "score": 6.0
+                    "score": 6
                 },
                 {
                     "label": "Vocabulary",
@@ -2493,7 +3178,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Rohit Ahmed shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2018
+            }
+        ]
     },
     {
         "id": "120",
@@ -2536,7 +3228,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Python",
-                "score": 6.0,
+                "score": 6,
                 "level": "Advanced",
                 "evidence": "Demonstrated through projects"
             }
@@ -2633,7 +3325,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Seema Patel shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Sc",
+                "branch": "Computer Science",
+                "year": 2022
+            }
+        ]
     },
     {
         "id": "121",
@@ -2718,7 +3417,7 @@ export const mockCandidates = [
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 8.0
+                    "score": 8
                 },
                 {
                     "label": "Structure",
@@ -2767,7 +3466,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "Medium",
             "quote": "Sanjay Chopra shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2015
+            }
+        ]
     },
     {
         "id": "122",
@@ -2776,7 +3482,7 @@ export const mockCandidates = [
         "experience": "5 yrs",
         "location": "Noida, Uttar Pradesh",
         "email": "shruti.tripathi@email.com",
-        "aiScore": 8.0,
+        "aiScore": 8,
         "trend": "Top 5%",
         "trendDirection": "neutral",
         "confidence": "71%",
@@ -2830,7 +3536,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Code Quality",
-                "score": 6.0,
+                "score": 6,
                 "dots": 10,
                 "filled": 6
             },
@@ -2875,7 +3581,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 7.0,
+                "score": 7,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -2912,7 +3618,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Shruti Tripathi shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Sc",
+                "branch": "Computer Science",
+                "year": 2021
+            }
+        ]
     },
     {
         "id": "123",
@@ -2963,7 +3676,7 @@ export const mockCandidates = [
             },
             {
                 "label": "System Design",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
@@ -3036,7 +3749,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 7.0,
+                "score": 7,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -3073,7 +3786,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Kabir Singh shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2023
+            }
+        ]
     },
     {
         "id": "124",
@@ -3160,7 +3880,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 7.0
+                    "score": 7
                 },
                 {
                     "label": "Confidence",
@@ -3201,7 +3921,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Sai Shah shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2021
+            }
+        ]
     },
     {
         "id": "125",
@@ -3270,7 +3997,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Optimization",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             }
@@ -3288,7 +4015,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 6.0
+                    "score": 6
                 },
                 {
                     "label": "Confidence",
@@ -3340,7 +4067,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Sarthak Khan shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2017
+            }
+        ]
     },
     {
         "id": "126",
@@ -3359,7 +4093,7 @@ export const mockCandidates = [
         "skills": [
             {
                 "name": "Vue.js",
-                "score": 6.0,
+                "score": 6,
                 "level": "Intermediate",
                 "evidence": "Demonstrated through projects"
             },
@@ -3403,7 +4137,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Best Practices",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
@@ -3423,7 +4157,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Structure",
-                    "score": 8.0
+                    "score": 8
                 },
                 {
                     "label": "Vocabulary",
@@ -3479,7 +4213,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Aadit Ghosh shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "Ph.D",
+                "branch": "Artificial Intelligence",
+                "year": 2017
+            }
+        ]
     },
     {
         "id": "127",
@@ -3641,7 +4382,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Ramesh Mishra shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2020
+            }
+        ]
     },
     {
         "id": "128",
@@ -3672,7 +4420,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Angular",
-                "score": 7.0,
+                "score": 7,
                 "level": "Intermediate",
                 "evidence": "Demonstrated through projects"
             }
@@ -3743,7 +4491,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 8.0,
+                "score": 8,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -3780,7 +4528,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Dhruv Dsouza shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2023
+            }
+        ]
     },
     {
         "id": "129",
@@ -3936,7 +4691,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Saanvi Deshpande shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Software Engineering",
+                "year": 2022
+            }
+        ]
     },
     {
         "id": "130",
@@ -3945,7 +4707,7 @@ export const mockCandidates = [
         "experience": "1 yrs",
         "location": "Pune, Maharashtra",
         "email": "monika.singh@email.com",
-        "aiScore": 8.0,
+        "aiScore": 8,
         "trend": "+10%",
         "trendDirection": "neutral",
         "confidence": "88%",
@@ -3973,13 +4735,13 @@ export const mockCandidates = [
             },
             {
                 "name": "Scikit-learn",
-                "score": 7.0,
+                "score": 7,
                 "level": "Expert",
                 "evidence": "Demonstrated through projects"
             },
             {
                 "name": "Pandas",
-                "score": 6.0,
+                "score": 6,
                 "level": "Expert",
                 "evidence": "Demonstrated through projects"
             }
@@ -3993,7 +4755,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Problem Solving",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             },
@@ -4017,13 +4779,13 @@ export const mockCandidates = [
             },
             {
                 "label": "Optimization",
-                "score": 6.0,
+                "score": 6,
                 "dots": 10,
                 "filled": 6
             }
         ],
         "communication": {
-            "score": 8.0,
+            "score": 8,
             "details": [
                 {
                     "label": "Clarity",
@@ -4061,7 +4823,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 8.0,
+                "score": 8,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -4109,7 +4871,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Monika Singh shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2025
+            }
+        ]
     },
     {
         "id": "131",
@@ -4172,7 +4941,7 @@ export const mockCandidates = [
             },
             {
                 "label": "System Design",
-                "score": 7.0,
+                "score": 7,
                 "dots": 10,
                 "filled": 7
             },
@@ -4200,7 +4969,7 @@ export const mockCandidates = [
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 9.0
+                    "score": 9
                 },
                 {
                     "label": "Structure",
@@ -4208,7 +4977,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 6.0
+                    "score": 6
                 },
                 {
                     "label": "Confidence",
@@ -4282,7 +5051,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Rekha Kulkarni shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "Ph.D",
+                "branch": "Artificial Intelligence",
+                "year": 2015
+            }
+        ]
     },
     {
         "id": "132",
@@ -4379,7 +5155,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 7.0
+                    "score": 7
                 }
             ]
         },
@@ -4449,7 +5225,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Pooja Kumar shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2020
+            }
+        ]
     },
     {
         "id": "133",
@@ -4492,7 +5275,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Vue.js",
-                "score": 6.0,
+                "score": 6,
                 "level": "Intermediate",
                 "evidence": "Demonstrated through projects"
             }
@@ -4540,7 +5323,7 @@ export const mockCandidates = [
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 9.0
+                    "score": 9
                 },
                 {
                     "label": "Structure",
@@ -4548,7 +5331,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 6.0
+                    "score": 6
                 },
                 {
                     "label": "Confidence",
@@ -4589,7 +5372,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Pari Hegde shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2017
+            }
+        ]
     },
     {
         "id": "134",
@@ -4668,7 +5458,7 @@ export const mockCandidates = [
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 6.0
+                    "score": 6
                 },
                 {
                     "label": "Structure",
@@ -4728,7 +5518,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Amaya Sinha shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2016
+            }
+        ]
     },
     {
         "id": "135",
@@ -4853,7 +5650,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 9.0,
+                "score": 9,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -4890,7 +5687,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Amyra Chopra shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Software Engineering",
+                "year": 2021
+            }
+        ]
     },
     {
         "id": "136",
@@ -4915,7 +5719,7 @@ export const mockCandidates = [
             },
             {
                 "name": "MongoDB",
-                "score": 9.0,
+                "score": 9,
                 "level": "Advanced",
                 "evidence": "Demonstrated through projects"
             },
@@ -4929,13 +5733,13 @@ export const mockCandidates = [
         "technicalDepth": [
             {
                 "label": "Conceptual Understanding",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
             {
                 "label": "Problem Solving",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             },
@@ -5018,7 +5822,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Kavya Mehta shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2023
+            }
+        ]
     },
     {
         "id": "137",
@@ -5049,7 +5860,7 @@ export const mockCandidates = [
             },
             {
                 "name": "PyTorch",
-                "score": 9.0,
+                "score": 9,
                 "level": "Beginner",
                 "evidence": "Demonstrated through projects"
             }
@@ -5087,7 +5898,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Optimization",
-                "score": 7.0,
+                "score": 7,
                 "dots": 10,
                 "filled": 7
             }
@@ -5109,7 +5920,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 6.0
+                    "score": 6
                 }
             ]
         },
@@ -5146,7 +5957,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Dhruv Iyer shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2018
+            }
+        ]
     },
     {
         "id": "138",
@@ -5155,7 +5973,7 @@ export const mockCandidates = [
         "experience": "9 yrs",
         "location": "Bangalore, Karnataka",
         "email": "shaurya.dubey@email.com",
-        "aiScore": 8.0,
+        "aiScore": 8,
         "trend": "Needs deep dive",
         "trendDirection": "up",
         "confidence": "87%",
@@ -5209,7 +6027,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Code Quality",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
@@ -5221,7 +6039,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Optimization",
-                "score": 7.0,
+                "score": 7,
                 "dots": 10,
                 "filled": 7
             }
@@ -5239,7 +6057,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 7.0
+                    "score": 7
                 },
                 {
                     "label": "Confidence",
@@ -5291,7 +6109,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Shaurya Dubey shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2017
+            }
+        ]
     },
     {
         "id": "139",
@@ -5316,7 +6141,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Docker",
-                "score": 9.0,
+                "score": 9,
                 "level": "Expert",
                 "evidence": "Demonstrated through projects"
             },
@@ -5366,7 +6191,7 @@ export const mockCandidates = [
             }
         ],
         "communication": {
-            "score": 9.0,
+            "score": 9,
             "details": [
                 {
                     "label": "Clarity",
@@ -5404,7 +6229,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 7.0,
+                "score": 7,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -5441,7 +6266,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Dhruv Khan shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2017
+            }
+        ]
     },
     {
         "id": "140",
@@ -5472,7 +6304,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Redis",
-                "score": 8.0,
+                "score": 8,
                 "level": "Expert",
                 "evidence": "Demonstrated through projects"
             },
@@ -5522,7 +6354,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Optimization",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             }
@@ -5532,7 +6364,7 @@ export const mockCandidates = [
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 9.0
+                    "score": 9
                 },
                 {
                     "label": "Structure",
@@ -5614,7 +6446,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Isha Tripathi shows good potential for the Backend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2021
+            }
+        ]
     },
     {
         "id": "141",
@@ -5633,7 +6472,7 @@ export const mockCandidates = [
         "skills": [
             {
                 "name": "TypeScript",
-                "score": 7.0,
+                "score": 7,
                 "level": "Intermediate",
                 "evidence": "Demonstrated through projects"
             },
@@ -5677,7 +6516,7 @@ export const mockCandidates = [
             },
             {
                 "label": "System Design",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             },
@@ -5765,7 +6604,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Aryan Reddy shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2018
+            }
+        ]
     },
     {
         "id": "142",
@@ -5868,7 +6714,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 7.0
+                    "score": 7
                 }
             ]
         },
@@ -5912,7 +6758,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 9.0,
+                "score": 9,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -5938,7 +6784,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Riya Patel shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2023
+            }
+        ]
     },
     {
         "id": "143",
@@ -6013,7 +6866,7 @@ export const mockCandidates = [
             }
         ],
         "communication": {
-            "score": 7.0,
+            "score": 7,
             "details": [
                 {
                     "label": "Clarity",
@@ -6066,7 +6919,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Riya Pawar shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2014
+            }
+        ]
     },
     {
         "id": "144",
@@ -6141,7 +7001,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Optimization",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             }
@@ -6159,7 +7019,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 7.0
+                    "score": 7
                 },
                 {
                     "label": "Confidence",
@@ -6200,7 +7060,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Rohit Pandey shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2018
+            }
+        ]
     },
     {
         "id": "145",
@@ -6356,7 +7223,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "Medium",
             "quote": "Sarthak Datta shows good potential for the Backend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2015
+            }
+        ]
     },
     {
         "id": "146",
@@ -6387,7 +7261,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Kubernetes",
-                "score": 7.0,
+                "score": 7,
                 "level": "Intermediate",
                 "evidence": "Demonstrated through projects"
             },
@@ -6507,7 +7381,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Sai Dsouza shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2019
+            }
+        ]
     },
     {
         "id": "147",
@@ -6604,7 +7485,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 8.0
+                    "score": 8
                 }
             ]
         },
@@ -6652,7 +7533,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Aditya Yadav shows good potential for the Backend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "Ph.D",
+                "branch": "Artificial Intelligence",
+                "year": 2019
+            }
+        ]
     },
     {
         "id": "148",
@@ -6791,7 +7679,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Avni Singh shows good potential for the Full Stack Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2015
+            }
+        ]
     },
     {
         "id": "149",
@@ -6886,7 +7781,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Structure",
-                    "score": 7.0
+                    "score": 7
                 },
                 {
                     "label": "Vocabulary",
@@ -6953,7 +7848,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "Medium",
             "quote": "Sanjay Bose shows good potential for the AI/ML Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Data Science",
+                "year": 2017
+            }
+        ]
     },
     {
         "id": "150",
@@ -6978,7 +7880,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Ansible",
-                "score": 9.0,
+                "score": 9,
                 "level": "Intermediate",
                 "evidence": "Demonstrated through projects"
             },
@@ -6996,7 +7898,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Terraform",
-                "score": 6.0,
+                "score": 6,
                 "level": "Beginner",
                 "evidence": "Demonstrated through projects"
             }
@@ -7010,7 +7912,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Problem Solving",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             },
@@ -7022,7 +7924,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Code Quality",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
@@ -7048,11 +7950,11 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Structure",
-                    "score": 7.0
+                    "score": 7
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 7.0
+                    "score": 7
                 },
                 {
                     "label": "Confidence",
@@ -7104,7 +8006,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Raghav Gupta shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2023
+            }
+        ]
     },
     {
         "id": "151",
@@ -7155,7 +8064,7 @@ export const mockCandidates = [
             },
             {
                 "label": "System Design",
-                "score": 6.0,
+                "score": 6,
                 "dots": 10,
                 "filled": 6
             },
@@ -7243,7 +8152,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Aarav Rao shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Information Technology",
+                "year": 2024
+            }
+        ]
     },
     {
         "id": "152",
@@ -7268,7 +8184,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Django",
-                "score": 9.0,
+                "score": 9,
                 "level": "Beginner",
                 "evidence": "Demonstrated through projects"
             },
@@ -7300,7 +8216,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Problem Solving",
-                "score": 7.0,
+                "score": 7,
                 "dots": 10,
                 "filled": 7
             },
@@ -7318,7 +8234,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Best Practices",
-                "score": 8.0,
+                "score": 8,
                 "dots": 10,
                 "filled": 8
             },
@@ -7334,7 +8250,7 @@ export const mockCandidates = [
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 9.0
+                    "score": 9
                 },
                 {
                     "label": "Structure",
@@ -7394,7 +8310,14 @@ export const mockCandidates = [
             "level": "Senior",
             "confidence": "High",
             "quote": "Kartik Dsouza shows good potential for the Backend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "BCA",
+                "branch": "Computer Applications",
+                "year": 2024
+            }
+        ]
     },
     {
         "id": "153",
@@ -7487,7 +8410,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 6.0
+                    "score": 6
                 },
                 {
                     "label": "Confidence",
@@ -7502,7 +8425,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 6.0,
+                "score": 6,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -7539,7 +8462,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Priya Kulkarni shows good potential for the DevOps Engineer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "MCA",
+                "branch": "Computer Applications",
+                "year": 2021
+            }
+        ]
     },
     {
         "id": "154",
@@ -7620,7 +8550,7 @@ export const mockCandidates = [
             },
             {
                 "label": "Optimization",
-                "score": 9.0,
+                "score": 9,
                 "dots": 10,
                 "filled": 9
             }
@@ -7642,7 +8572,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 6.0
+                    "score": 6
                 }
             ]
         },
@@ -7690,7 +8620,14 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Dev Nair shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "M.Tech",
+                "branch": "Software Engineering",
+                "year": 2023
+            }
+        ]
     },
     {
         "id": "155",
@@ -7721,7 +8658,7 @@ export const mockCandidates = [
             },
             {
                 "name": "Angular",
-                "score": 8.0,
+                "score": 8,
                 "level": "Beginner",
                 "evidence": "Demonstrated through projects"
             },
@@ -7753,7 +8690,7 @@ export const mockCandidates = [
             },
             {
                 "label": "System Design",
-                "score": 7.0,
+                "score": 7,
                 "dots": 10,
                 "filled": 7
             },
@@ -7815,7 +8752,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 9.0,
+                "score": 9,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -7826,7 +8763,7 @@ export const mockCandidates = [
                 "date": "Recent",
                 "duration": "45-60 min",
                 "focus": "General Assessment",
-                "score": 9.0,
+                "score": 9,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
                 "summary": "Candidate performed well.",
                 "moments": []
@@ -7863,6 +8800,13 @@ export const mockCandidates = [
             "level": "Mid-level",
             "confidence": "Medium",
             "quote": "Rekha Mishra shows good potential for the Frontend Developer position."
-        }
+        },
+        "education": [
+            {
+                "degree": "B.Tech",
+                "branch": "Computer Science",
+                "year": 2017
+            }
+        ]
     }
 ];
