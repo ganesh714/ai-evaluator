@@ -2,77 +2,77 @@ export const mockCandidates = [
     {
         "id": "101",
         "name": "Rajendra Mallina",
-        "role": "Senior Frontend Developer",
+        "role": "Senior Software Engineer",
         "experience": "8 yrs",
         "location": "Hyderabad, Telangana",
         "email": "rajendram@email.com",
-        "aiScore": 8.7,
-        "trend": "+12%",
+        "aiScore": 8.9,
+        "trend": "+15%",
         "trendDirection": "up",
-        "confidence": "83%",
-        "topPercentile": "Top 12%",
+        "confidence": "85%",
+        "topPercentile": "Top 10%",
         "interviewCount": 3,
         "lastInterview": "Yesterday",
         "skills": [
             {
-                "name": "React",
-                "score": 9.2,
+                "name": "Java / Spring Boot",
+                "score": 9.4,
                 "level": "Advanced",
-                "evidence": "Virtual DOM, custom hooks, performance profiling"
+                "evidence": "Microservices, Spring Security, Reactive Programming"
             },
             {
-                "name": "TypeScript",
-                "score": 8.5,
-                "level": "Advanced",
-                "evidence": "Generic types, utility types, strict mode"
-            },
-            {
-                "name": "Node.js",
-                "score": 7.1,
-                "level": "Intermediate",
-                "evidence": "REST APIs, Express middleware"
-            },
-            {
-                "name": "State Mgmt",
+                "name": "System Design",
                 "score": 8.8,
                 "level": "Advanced",
-                "evidence": "Redux Toolkit, Context API, Zustand"
+                "evidence": "Distributed systems, event-driven architecture, scalability"
             },
             {
-                "name": "Testing",
-                "score": 6.5,
-                "level": "Needs Work",
-                "evidence": "Jest basics, limited E2E experience"
+                "name": "Python",
+                "score": 8.2,
+                "level": "Advanced",
+                "evidence": "FastAPI, data processing, backend automation"
+            },
+            {
+                "name": "Cloud / AWS",
+                "score": 8.0,
+                "level": "Advanced",
+                "evidence": "EC2, S3, Lambda, Docker, Kubernetes"
+            },
+            {
+                "name": "Frontend / React",
+                "score": 6.8,
+                "level": "Intermediate",
+                "evidence": "Component lifecycle, basic state management"
             }
         ],
         "technicalDepth": [
             {
                 "label": "Conceptual Understanding",
-                "score": 9,
+                "score": 9.2,
                 "dots": 10,
                 "filled": 9
             },
             {
                 "label": "Problem Solving",
-                "score": 8.7,
+                "score": 8.8,
                 "dots": 10,
-                "filled": 8
+                "filled": 9
             },
             {
                 "label": "System Design",
-                "score": 7.2,
+                "score": 9.0,
                 "dots": 10,
-                "filled": 7
+                "filled": 9
             },
             {
                 "label": "Code Quality",
-                "score": 8.5,
+                "score": 8.6,
                 "dots": 10,
-                "filled": 8
+                "filled": 9
             },
             {
                 "label": "Best Practices",
-                "score": 8,
+                "score": 8.5,
                 "dots": 10,
                 "filled": 8
             },
@@ -84,15 +84,15 @@ export const mockCandidates = [
             }
         ],
         "communication": {
-            "score": 8.2,
+            "score": 8.4,
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 8.5
+                    "score": 8.6
                 },
                 {
                     "label": "Structure",
-                    "score": 8
+                    "score": 8.5
                 },
                 {
                     "label": "Vocabulary",
@@ -100,74 +100,74 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Confidence",
-                    "score": 8.1
+                    "score": 8.2
                 }
             ]
         },
         "interviews": [
             {
                 "id": 1,
-                "round": "Technical Interview 1",
-                "date": "Mar 15, 2024",
+                "round": "Coding Round",
+                "date": "Mar 15, 2026",
                 "duration": "45 min",
-                "focus": "React fundamentals",
-                "score": 8.2,
+                "focus": "Data Structures & Algorithms (DSA)",
+                "score": 8.5,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                "summary": "Strong foundational knowledge. Explained closure, prototype chain confidently.",
+                "summary": "Solved a graph traversal and a dynamic programming problem optimally. Solid grasp of time and space complexity.",
                 "moments": [
                     {
                         "time": "02:15",
                         "seconds": 135,
-                        "label": "Virtual DOM explanation"
+                        "label": "Graph BFS implementation"
                     },
                     {
                         "time": "12:30",
                         "seconds": 750,
-                        "label": "Custom hook implementation"
+                        "label": "Time complexity optimization"
                     }
                 ]
             },
             {
                 "id": 2,
-                "round": "Technical Interview 2",
-                "date": "Mar 22, 2024",
+                "round": "Technical Round",
+                "date": "Mar 22, 2026",
                 "duration": "60 min",
-                "focus": "Frontend Architecture",
-                "score": 8.5,
+                "focus": "API Design, Spring Boot & System Architecture",
+                "score": 8.8,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                "summary": "Designed a dashboard with lazy loading. Good knowledge of bundle optimization.",
+                "summary": "Deep dive into Spring Boot internals and REST best practices. Successfully architected a scalable backend system.",
                 "moments": [
                     {
                         "time": "05:50",
                         "seconds": 350,
-                        "label": "Component breakdown"
+                        "label": "Spring Bean lifecycle discussion"
                     },
                     {
                         "time": "32:15",
                         "seconds": 1935,
-                        "label": "Lazy loading strategy"
+                        "label": "Designing fault-tolerant microservices"
                     }
                 ]
             },
             {
                 "id": 3,
-                "round": "Technical Interview 3",
-                "date": "Mar 29, 2024",
-                "duration": "75 min",
-                "focus": "Search Autocomplete",
-                "score": 9.1,
+                "round": "HR Round",
+                "date": "Mar 29, 2026",
+                "duration": "30 min",
+                "focus": "Behavioral, Cultural Fit & Leadership",
+                "score": 9.2,
                 "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                "summary": "Efficient implementation with debouncing. Clean component structure.",
+                "summary": "Great cultural fit. Communicated clearly about handling past project conflicts, mentoring juniors, and long-term career goals.",
                 "moments": [
                     {
-                        "time": "15:20",
-                        "seconds": 920,
-                        "label": "Debounce logic"
+                        "time": "10:20",
+                        "seconds": 620,
+                        "label": "Handling tight deadlines scenario"
                     },
                     {
-                        "time": "42:10",
-                        "seconds": 2530,
-                        "label": "Caching results"
+                        "time": "22:10",
+                        "seconds": 1330,
+                        "label": "Discussing mentorship and leadership"
                     }
                 ]
             }
@@ -175,28 +175,28 @@ export const mockCandidates = [
         "aiAnalysis": {
             "strengths": [
                 {
-                    "title": "React Architecture",
+                    "title": "Backend Architecture",
                     "level": "Expert",
-                    "desc": "Deep understanding of reconciliation and hooks"
+                    "desc": "Deep understanding of microservices, concurrency, and API design"
                 },
                 {
-                    "title": "Problem Solving",
+                    "title": "System Design",
                     "level": "Advanced",
-                    "desc": "Methodical approach to complex UI logic"
+                    "desc": "Methodical approach to building scalable and resilient systems"
                 }
             ],
             "weaknesses": [
                 {
-                    "title": "Testing",
+                    "title": "Frontend Ecosystem",
                     "level": "Intermediate",
-                    "desc": "Needs more experience with TDD and E2E tools"
+                    "desc": "Needs brushing up on advanced modern UI frameworks and state management"
                 }
             ],
             "hiringRecommendation": "STRONG CONSIDER",
-            "fitScore": "8.7/10",
+            "fitScore": "8.9/10",
             "level": "Senior",
             "confidence": "High",
-            "quote": "Rajendra demonstrates strong React expertise with production experience. Would be a valuable addition to any frontend team."
+            "quote": "Rajendra demonstrates strong software engineering expertise with heavy production backend experience. Would be a valuable architectural anchor to any engineering team."
         },
         "education": [
             {
