@@ -110,20 +110,25 @@ export const mockCandidates = [
                 "round": "Coding Round",
                 "date": "Mar 15, 2026",
                 "duration": "45 min",
-                "focus": "Data Structures & Algorithms (DSA)",
-                "score": 8.5,
-                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                "summary": "Solved a graph traversal and a dynamic programming problem optimally. Solid grasp of time and space complexity.",
+                "focus": "Data Structures & Algorithms (Arrays & Heaps)",
+                "score": 8.0,
+                "video": "https://www.youtube.com/embed/arhCUycHyNE",
+                "summary": "Solved an array grouping problem (Hand of Straights). Started with a brute force sorting approach but successfully pivoted to using a Priority Queue/Min-Heap after hints.",
                 "moments": [
                     {
-                        "time": "02:15",
-                        "seconds": 135,
-                        "label": "Graph BFS implementation"
+                        "time": "08:26",
+                        "seconds": 506,
+                        "label": "Proposing Hash Map approach"
                     },
                     {
-                        "time": "12:30",
-                        "seconds": 750,
-                        "label": "Time complexity optimization"
+                        "time": "19:28",
+                        "seconds": 1168,
+                        "label": "Pivoting to Min-Heap (Priority Queue)"
+                    },
+                    {
+                        "time": "31:03",
+                        "seconds": 1863,
+                        "label": "Interviewer feedback on complexity"
                     }
                 ]
             },
@@ -134,18 +139,23 @@ export const mockCandidates = [
                 "duration": "60 min",
                 "focus": "API Design, Spring Boot & System Architecture",
                 "score": 8.8,
-                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                "summary": "Deep dive into Spring Boot internals and REST best practices. Successfully architected a scalable backend system.",
+                "video": "https://www.youtube.com/embed/l5eQLfOsKOQ",
+                "summary": "Deep dive into Java internals, JDBC architecture, and core OOP principles. Handled rapid-fire edge case questions confidently, demonstrating strong senior-level fundamentals.",
                 "moments": [
                     {
-                        "time": "05:50",
-                        "seconds": 350,
-                        "label": "Spring Bean lifecycle discussion"
+                        "time": "03:17",
+                        "seconds": 197,
+                        "label": "Explaining interfaces in JDBC architecture"
                     },
                     {
-                        "time": "32:15",
-                        "seconds": 1935,
-                        "label": "Designing fault-tolerant microservices"
+                        "time": "05:03",
+                        "seconds": 303,
+                        "label": "Handling JVM/Compiler edge cases (main method)"
+                    },
+                    {
+                        "time": "35:29",
+                        "seconds": 2129,
+                        "label": "Prepared Statements vs Standard Statements"
                     }
                 ]
             },
@@ -209,7 +219,7 @@ export const mockCandidates = [
     {
         "id": "102",
         "name": "Veera Venkata Ganesh",
-        "role": "Full Stack & Game Developer",
+        "role": "Full Stack Developer",
         "experience": "2 yrs",
         "location": "Surampalem, India",
         "email": "evvganesh1@gmail.com",
@@ -218,7 +228,7 @@ export const mockCandidates = [
         "trendDirection": "up",
         "confidence": "90%",
         "topPercentile": "Top 5%",
-        "interviewCount": 4,
+        "interviewCount": 3,
         "lastInterview": "2 days ago",
         "skills": [
             {
@@ -228,28 +238,28 @@ export const mockCandidates = [
                 "evidence": "College Intranet Portal, Modular Backend Architecture"
             },
             {
-                "name": "FastAPI",
+                "name": "Java / Spring Boot",
                 "score": 8.9,
                 "level": "Advanced",
-                "evidence": "ClassMate App, High-performance APIs"
+                "evidence": "Reactive Stock Service, Spring WebFlux, Project Reactor"
             },
             {
-                "name": "Java/DSA",
-                "score": 8.7,
-                "level": "Advanced",
-                "evidence": "5-Star HackerRank, LeetCode Problem Solving"
-            },
-            {
-                "name": "AI/ML",
+                "name": "Python / FastAPI",
                 "score": 8.8,
                 "level": "Advanced",
-                "evidence": "RAG, Agentic Workflows, FAISS Vector Indexing"
+                "evidence": "ClassMate App backend, AI agentic workflows"
             },
             {
-                "name": "Unity (C#)",
+                "name": "System Design",
                 "score": 8.5,
                 "level": "Intermediate",
-                "evidence": "2D Puzzle Game Development, Google Ads Integration"
+                "evidence": "SOLID principles, offline-first workflows"
+            },
+            {
+                "name": "AI/ML Integration",
+                "score": 8.8,
+                "level": "Advanced",
+                "evidence": "RAG, AD-MoE systems, FAISS Vector Indexing"
             }
         ],
         "technicalDepth": [
@@ -295,7 +305,7 @@ export const mockCandidates = [
             "details": [
                 {
                     "label": "Clarity",
-                    "score": 8
+                    "score": 8.0
                 },
                 {
                     "label": "Structure",
@@ -303,7 +313,7 @@ export const mockCandidates = [
                 },
                 {
                     "label": "Vocabulary",
-                    "score": 8
+                    "score": 8.0
                 },
                 {
                     "label": "Confidence",
@@ -314,45 +324,77 @@ export const mockCandidates = [
         "interviews": [
             {
                 "id": 1,
-                "round": "Technical Round 1",
-                "date": "Mar 10, 2024",
-                "duration": "60 min",
-                "focus": "Full Stack & System Design",
-                "score": 9.2,
-                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                "summary": "Deep dive into MERN stack architecture. Explained refactoring legacy backend to SOLID principles perfectly.",
+                "round": "Coding Round",
+                "date": "Mar 10, 2026",
+                "duration": "45 min",
+                "focus": "Data Structures & Algorithms (DSA) & OOP",
+                "score": 9.1,
+                "video": "https://www.youtube.com/embed/ZDOSnPQT5B0",
+                "summary": "Strong grasp of fundamental OOP concepts and graph theory. Solved mathematical array problems efficiently while communicating thought processes clearly out loud.",
                 "moments": [
                     {
-                        "time": "10:15",
-                        "seconds": 615,
-                        "label": "Backend refactoring strategy"
+                        "time": "03:02",
+                        "seconds": 182,
+                        "label": "Explaining OOP Abstraction & Inheritance"
                     },
                     {
-                        "time": "45:20",
-                        "seconds": 2720,
-                        "label": "Role-based access control"
+                        "time": "06:34",
+                        "seconds": 394,
+                        "label": "Defining Topological Sort in Graphs"
+                    },
+                    {
+                        "time": "44:09",
+                        "seconds": 2649,
+                        "label": "Interviewer feedback on communication"
                     }
                 ]
             },
             {
                 "id": 2,
-                "round": "Technical Round 2",
-                "date": "Mar 18, 2024",
+                "round": "Technical Round",
+                "date": "Mar 18, 2026",
                 "duration": "60 min",
-                "focus": "AI Agents & Optimization",
-                "score": 8.8,
-                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
-                "summary": "Demonstrated strong grasp of RAG and Vector Indexing. Walked through Unity game logic optimization.",
+                "focus": "Full Stack JS, React & Express",
+                "score": 8.5,
+                "video": "https://www.youtube.com/embed/l2f3xVvZGLA",
+                "summary": "Handled tricky JavaScript scope and type coercion questions well. Demonstrated solid understanding of asynchronous code, JWT authentication, and Express routing.",
                 "moments": [
                     {
-                        "time": "08:30",
-                        "seconds": 510,
-                        "label": "RAG Pipeline Logic"
+                        "time": "02:29",
+                        "seconds": 149,
+                        "label": "JavaScript Type Coercion (Loose equality)"
                     },
                     {
-                        "time": "35:45",
-                        "seconds": 2145,
-                        "label": "Unity UI Optimization"
+                        "time": "10:56",
+                        "seconds": 656,
+                        "label": "Handling asynchronous code"
+                    },
+                    {
+                        "time": "22:27",
+                        "seconds": 1347,
+                        "label": "Explaining JWT and Access/Refresh tokens"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "round": "HR Round",
+                "date": "Mar 25, 2026",
+                "duration": "30 min",
+                "focus": "Behavioral, Teamwork & Project Management",
+                "score": 8.8,
+                "video": "https://www.youtube.com/embed/mQ8HlG3Tse4?si=d2uuPpgEANVIVtmG",
+                "summary": "Strong team player. Clearly differentiated roles between major projects and discussed successful hackathon collaboration experiences at Prakalp.",
+                "moments": [
+                    {
+                        "time": "05:30",
+                        "seconds": 330,
+                        "label": "Discussing team dynamics and delegation"
+                    },
+                    {
+                        "time": "18:45",
+                        "seconds": 1125,
+                        "label": "Managing project deadlines"
                     }
                 ]
             }
@@ -360,34 +402,35 @@ export const mockCandidates = [
         "aiAnalysis": {
             "strengths": [
                 {
-                    "title": "Full Stack Architecture",
+                    "title": "Full Stack Versatility",
                     "level": "Expert",
-                    "desc": "Experience building scalable portals using MERN and FastAPI"
+                    "desc": "Seamlessly transitions between MERN, Spring Boot, and Python/FastAPI architectures."
                 },
                 {
-                    "title": "Problem Solving",
+                    "title": "System Architecture",
                     "level": "Advanced",
-                    "desc": "Strong DSA background with 5-star ratings on HackerRank"
+                    "desc": "Strong grasp of SOLID principles and integrating AI features like RAG directly into full-stack apps."
                 }
             ],
             "weaknesses": [
                 {
-                    "title": "Cloud Deployment",
+                    "title": "Cloud Infrastructure",
                     "level": "Intermediate",
-                    "desc": "Familiar with local dev, ready for advanced AWS/Azure scaling"
+                    "desc": "Familiar with local dev and containerization, ready for advanced AWS/GCP scaling."
                 }
             ],
             "hiringRecommendation": "MUST HIRE",
             "fitScore": "9.1/10",
             "level": "High Potential Engineer",
             "confidence": "Very High",
-            "quote": "Veera Venkata Ganesh is a top-tier developer who bridges the gap between Full Stack Engineering and AI innovation."
+            "quote": "Ganesh is a top-tier developer who bridges the gap between Full Stack Engineering and AI innovation. His hands-on project experience sets him apart."
         },
         "education": [
             {
                 "degree": "B.Tech",
                 "branch": "Artificial Intelligence and Machine Learning",
-                "year": 2024
+                "institution": "Aditya University",
+                "year": 2027
             }
         ]
     },
